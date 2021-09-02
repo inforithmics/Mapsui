@@ -333,7 +333,6 @@ namespace Mapsui.UI.Forms
             }
 
             bool lockTaken = false;
-            var canvas = skPaintSurfaceEventArgs.Surface.Canvas;
 
             try
             {
@@ -361,7 +360,7 @@ namespace Mapsui.UI.Forms
 
         public void RefreshGraphics()
         {
-            if (!_initialized && GRContext == null)
+            if (!_initialized)
             {
                 // Could this be null before Home is called? If so we should change the logic.
                 Logging.Logger.Log(Logging.LogLevel.Warning, "Refresh can not be called because GRContext is null");
@@ -875,7 +874,7 @@ namespace Mapsui.UI.Forms
 
             // Called if needed
             if (redraw)
-                Device.BeginInvokeOnMainThread(() => InvalidateSurface());
+                Device.BeginInvokeOnMainThread(() => this._invalidate());
         }
     }
 }
