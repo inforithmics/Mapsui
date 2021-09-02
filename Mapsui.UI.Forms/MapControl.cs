@@ -18,8 +18,10 @@ namespace Mapsui.UI.Forms
     /// <summary>
     /// Class, that uses the API of all other Mapsui MapControls
     /// </summary>
-    public partial class MapControl : SKGLView, IMapControl, IDisposable
+    public partial class MapControl :  ContentView, IMapControl, IDisposable
     {
+        public static bool UseGPU = true;
+
         class TouchEvent
         {
             public long Id { get; }
@@ -33,6 +35,10 @@ namespace Mapsui.UI.Forms
                 Tick = tick;
             }
         }
+
+        private SKGLView _glView;
+        private SKCanvasView _canvasView;
+        private Action _invalidate;
 
         // See http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/4.0.4_r2.1/android/view/ViewConfiguration.java#ViewConfiguration.0PRESSED_STATE_DURATION for values
         private const int shortTap = 125;
@@ -103,14 +109,42 @@ namespace Mapsui.UI.Forms
 
         public void Initialize()
         {
+            Xamarin.Forms.View view;
+
+            if (UseGPU)
+            {
+                // Use GPU backend
+                _glView = new SKGLView
+                {
+                    HasRenderLoop = false,
+                    EnableTouchEvents = true,
+                };
+                // Events
+                _glView.Touch += OnTouch;
+                _glView.PaintSurface += OnGLPaintSurface;
+                _invalidate = () => { RunOnUIThread(() => _glView.InvalidateSurface()); };
+                view = _glView;
+            }
+            else
+            {
+                // Use CPU backend
+                _canvasView = new SKCanvasView
+                {
+                    EnableTouchEvents = true,
+                };
+                // Events
+                _canvasView.Touch += OnTouch;
+                _canvasView.PaintSurface += OnPaintSurface;
+                _invalidate = () => { RunOnUIThread(() => _canvasView.InvalidateSurface()); };
+                view = _canvasView;
+            }
+
+            view.SizeChanged += OnSizeChanged;
+
+            Content = view;
+
             Map = new Map();
             BackgroundColor = Color.White;
-
-            EnableTouchEvents = true;
-
-            PaintSurface += OnPaintSurface;
-            Touch += OnTouch;
-            SizeChanged += OnSizeChanged;
 
             // Create timer for redrawing
             _timer = new System.Threading.Timer(OnTimerCallback, null, TimeSpan.FromMilliseconds(1000.0 / _fpsWanted), TimeSpan.FromMilliseconds(1000.0 / _fpsWanted));
@@ -271,7 +305,26 @@ namespace Mapsui.UI.Forms
             return _firstTouch == null ? false : Algorithms.Distance(releasedTouch.Location, _firstTouch) < touchSlop;
         }
 
-        void OnPaintSurface(object sender, SKPaintGLSurfaceEventArgs skPaintSurfaceEventArgs)
+        void OnGLPaintSurface(object sender, SKPaintGLSurfaceEventArgs args)
+        {
+            if (!_initialized && _glView.GRContext == null)
+            {
+                // Could this be null before Home is called? If so we should change the logic.
+                Logging.Logger.Log(Logging.LogLevel.Warning, "Refresh can not be called because GRContext is null");
+                return;
+            }
+
+            // Called on UI thread
+            PaintSurface(args.Surface.Canvas);
+        }
+
+        void OnPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+        {
+            // Called on UI thread
+            PaintSurface(args.Surface.Canvas);
+        }
+
+        void PaintSurface(SKCanvas canvas)
         {
             if (_sizeChanged)
             {
@@ -288,9 +341,8 @@ namespace Mapsui.UI.Forms
 
                 if (lockTaken)
                 {
-                    skPaintSurfaceEventArgs.Surface.Canvas.Scale(PixelDensity, PixelDensity);
-
-                    _renderer.Render(canvas, new Viewport(Viewport), _map.Layers, _map.Widgets, _map.BackColor);
+                    canvas.Scale(PixelDensity, PixelDensity);
+                    _renderer.Render(canvas, new Viewport(Viewport), _map.Layers, _map.Widgets, _map.BackColor);                    
 
                     NeedsRedraw = false;
                 }
@@ -783,7 +835,10 @@ namespace Mapsui.UI.Forms
         private float GetPixelDensity()
         {
             if (Width <= 0) return 0;
-            return (float)(CanvasSize.Width / Width);
+            if (UseGPU)
+                return (float)(_glView.CanvasSize.Width / Width);
+            else
+                return (float)(_canvasView.CanvasSize.Width / Width);
         }
 
         // See http://codetips.nl/skiagameloop.html
