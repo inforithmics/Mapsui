@@ -6,6 +6,9 @@
     <ImplicitUsings>true</ImplicitUsings>
     <SupportedOSPlatformVersion>11.2</SupportedOSPlatformVersion>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
   </ItemGroup>
@@ -29,6 +32,7 @@
     <PackageReference Include="SkiaSharp">
       <Version>2.88.0-preview.187</Version>
     </PackageReference>
+    <PackageReference Include="SkiaSharp.HarfBuzz" Version="2.88.0-preview.179" />
     <PackageReference Include="SkiaSharp.Views">
       <Version>2.88.0-preview.187</Version>
     </PackageReference>
