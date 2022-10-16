@@ -25,7 +25,7 @@ namespace Mapsui.Rendering.Skia
             {
                 if (moveLeft != 0 || moveTop != 0)
                 {
-                    var matrix = SKMatrix.CreateTranslation(rect.Left, rect.Top);    
+                    var matrix = SKMatrix.CreateTranslation(moveLeft, moveTop);    
                     canvas.DrawPicture(picture, ref matrix, skPaint);  
                 }
                 else
