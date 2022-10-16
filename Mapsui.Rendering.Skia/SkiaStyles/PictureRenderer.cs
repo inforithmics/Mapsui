@@ -17,11 +17,34 @@ namespace Mapsui.Rendering.Skia
         {
             var skPaint = GetPaint(layerOpacity, blendModeColor, out var dispose);
 
+            var moveLeft = rect.Left - picture.CullRect.Left;
+            var moveTop = rect.Top - picture.CullRect.Top;
             var scaleX = rect.Width / picture.CullRect.Width;
             var scaleY = rect.Height / picture.CullRect.Height;
-            var matrix = SKMatrix.CreateScaleTranslation(scaleX, scaleY, rect.Left, rect.Top);
+            if (scaleX == 1 && scaleY == 1)
+            {
+                if (moveLeft != 0 || moveTop != 0)
+                {
+                    var matrix = SKMatrix.CreateTranslation(rect.Left, rect.Top);    
+                    canvas.DrawPicture(picture, ref matrix, skPaint);  
+                }
+                else
+                {
+                    // no matrix is needed
+                    canvas.DrawPicture(picture, skPaint);
+                }
+            }
+            else if (moveLeft == 0 && moveTop == 0)
+            {
+                var matrix = SKMatrix.CreateScale(scaleX, scaleY);
+                canvas.DrawPicture(picture, ref matrix, skPaint);  
+            }
+            else
+            {
+                var matrix = SKMatrix.CreateScaleTranslation(scaleX, scaleY, rect.Left, rect.Top);
+                canvas.DrawPicture(picture, ref matrix, skPaint);  
+            }
 
-            canvas.DrawPicture(picture, ref matrix, skPaint);
             if (dispose)
             {
                 skPaint.Dispose();
