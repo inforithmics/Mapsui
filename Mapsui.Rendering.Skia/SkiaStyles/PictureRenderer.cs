@@ -41,7 +41,7 @@ namespace Mapsui.Rendering.Skia
             }
             else
             {
-                var matrix = SKMatrix.CreateScaleTranslation(scaleX, scaleY, rect.Left, rect.Top);
+                var matrix = SKMatrix.CreateScaleTranslation(scaleX, scaleY, moveLeft, moveTop);
                 canvas.DrawPicture(picture, ref matrix, skPaint);  
             }
 
