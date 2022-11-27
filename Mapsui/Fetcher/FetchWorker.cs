@@ -6,7 +6,7 @@ using Mapsui.Logging;
 
 namespace Mapsui.Fetcher
 {
-    public class FetchWorker : IDisposable // Todo: Make internal
+    internal class FetchWorker : IDisposable // Todo: Make internal
     {
         private readonly IFetchDispatcher _fetchDispatcher;
         private CancellationTokenSource? _fetchLoopCancellationTokenSource;

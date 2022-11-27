@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using BruTile;
 using BruTile.Cache;
@@ -15,7 +16,7 @@ using Mapsui.Tiling.Extensions;
 
 namespace Mapsui.Tiling.Fetcher
 {
-    public class TileFetchDispatcher : IFetchDispatcher, INotifyPropertyChanged
+    internal class TileFetchDispatcher : IFetchDispatcher, INotifyPropertyChanged
     {
         private FetchInfo? _fetchInfo;
         private readonly object _lockRoot = new();
@@ -23,7 +24,7 @@ namespace Mapsui.Tiling.Fetcher
         private bool _viewportIsModified;
         private readonly ITileCache<IFeature?> _tileCache;
         private readonly IDataFetchStrategy _dataFetchStrategy;
-        private readonly ConcurrentQueue<TileInfo> _tilesToFetch = new();
+        private readonly Channel<TileInfo> _tilesToFetch = Channel.CreateUnbounded<TileInfo>();
         private readonly ConcurrentHashSet<TileIndex> _tilesInProgress = new();
         private readonly ITileSchema? _tileSchema;
         private readonly FetchMachine _fetchMachine;
@@ -61,14 +62,14 @@ namespace Mapsui.Tiling.Fetcher
             lock (_lockRoot)
             {
                 UpdateIfViewportIsModified();
-                if (_tilesToFetch.TryDequeue(out var tileInfo))
+                if (_tilesToFetch.Reader.TryRead(out var tileInfo))
                 {
                     _tilesInProgress.Add(tileInfo.Index);
                     method = async () => await FetchOnThreadAsync(tileInfo);
                     return true;
                 }
 
-                Busy = _tilesInProgress.Count > 0 || _tilesToFetch.Count > 0;
+                Busy = _tilesInProgress.Count > 0 || _tilesToFetch.Reader.Count > 0;
                 // else the queue is empty, we are done.
                 method = null;
                 return false;
@@ -107,7 +108,7 @@ namespace Mapsui.Tiling.Fetcher
                     _tileCache.Add(tileInfo.Index, feature);
                 _tilesInProgress.TryRemove(tileInfo.Index);
 
-                Busy = _tilesInProgress.Count > 0 || _tilesToFetch.Count > 0;
+                Busy = _tilesInProgress.Count > 0 || _tilesToFetch.Reader.Count > 0;
 
                 DataChanged?.Invoke(this, new DataChangedEventArgs(exception, false, tileInfo));
             }
@@ -148,9 +149,13 @@ namespace Mapsui.Tiling.Fetcher
             var tilesToCoverViewport = _dataFetchStrategy.Get(_tileSchema, _fetchInfo.Extent.ToExtent(), levelId);
             NumberTilesNeeded = tilesToCoverViewport.Count;
             var tilesToFetch = tilesToCoverViewport.Where(t => _tileCache.Find(t.Index) == null && !_tilesInProgress.Contains(t.Index));
-            _tilesToFetch.Clear();
-            _tilesToFetch.AddRange(tilesToFetch);
-            if (_tilesToFetch.Count > 0) Busy = true;
+            _tilesToFetch.Reader.Clear();
+            foreach (var tile in tilesToFetch)
+            {
+                _tilesToFetch.Writer.TryWrite(tile);
+            }
+            
+            if (_tilesToFetch.Reader.Count > 0) Busy = true;
         }
     }
 }
