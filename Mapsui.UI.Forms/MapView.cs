@@ -41,7 +41,7 @@ namespace Mapsui.UI.Forms
     /// <summary>
     /// Class, that uses the API of the original Xamarin.Forms MapView
     /// </summary>
-    public class MapView : MapControl, INotifyPropertyChanged, IEnumerable<Pin>
+    public partial class MapView : MapControl, INotifyPropertyChanged, IEnumerable<Pin>
     {
         private const string CalloutLayerName = "Callouts";
         private const string PinLayerName = "Pins";
