@@ -28,16 +28,13 @@
     <Compile Include="..\Mapsui.UI.Forms\Objects\Distance.cs" Link="Objects\Distance.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Drawable.cs" Link="Objects\Drawable.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\IClickable.cs" Link="Objects\IClickable.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Objects\IFeatureProvider.cs" Link="Objects\IFeatureProvider.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\MapSpan.cs" Link="Objects\MapSpan.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\MyLocationLayer.cs" Link="Objects\MyLocationLayer.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Objects\ObservableCollectionProvider.cs" Link="Objects\ObservableCollectionProvider.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Pin.cs" Link="Objects\Pin.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\PinType.cs" Link="Objects\PinType.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Polygon.cs" Link="Objects\Polygon.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Polyline.cs" Link="Objects\Polyline.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Position.cs" Link="Objects\Position.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Utils\ObservableRangeCollection.cs" Link="Utils\ObservableRangeCollection.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Utils\PolylineConverter.cs" Link="Utils\PolylineConverter.cs" />
   </ItemGroup>
 
