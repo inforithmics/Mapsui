@@ -8,6 +8,8 @@ using Mapsui.Styles;
 using Mapsui.UI.Objects;
 using NetTopologySuite.Geometries;
 using Mapsui.Nts.Extensions;
+using Position = Mapsui.UI.Objects.Position;
+
 #if __MAUI__
 using Mapsui.UI.Maui.Extensions;
 using Mapsui.UI.Maui.Utils;

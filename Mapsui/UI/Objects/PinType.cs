@@ -1,8 +1,4 @@
-﻿#if __MAUI__
-namespace Mapsui.UI.Maui
-#else
-namespace Mapsui.UI.Forms
-#endif
+﻿namespace Mapsui.UI.Objects
 {
     public enum PinType
     {

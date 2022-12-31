@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using Mapsui.Nts;
 using NetTopologySuite.Geometries;
 using Mapsui.Nts.Extensions;
+using Position = Mapsui.UI.Objects.Position;
 
 #if __MAUI__
 using Microsoft.Maui;

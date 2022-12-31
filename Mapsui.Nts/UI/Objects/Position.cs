@@ -2,11 +2,7 @@
 using Mapsui.Projections;
 using NetTopologySuite.Geometries;
 
-#if __MAUI__
-namespace Mapsui.UI.Maui
-#else
-namespace Mapsui.UI.Forms
-#endif
+namespace Mapsui.UI.Objects
 {
     /// <summary>
     /// Structure holding latitude and longitude of a position in spherical coordinate system
