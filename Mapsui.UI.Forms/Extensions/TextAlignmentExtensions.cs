@@ -6,11 +6,7 @@ using Microsoft.Maui;
 using Xamarin.Forms;
 #endif
 
-#if __MAUI__
-namespace Mapsui.UI.Maui.Extensions
-#else
-namespace Mapsui.UI.Forms.Extensions
-#endif
+namespace Mapsui.UI.Extensions
 {
     public static class TextAlignmentExtensions
     {

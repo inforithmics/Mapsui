@@ -16,8 +16,9 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using Mapsui.Logging;
 using Mapsui.Utilities;
+using Mapsui.UI.Extensions;
+
 #if __MAUI__
-using Mapsui.UI.Maui.Extensions;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
@@ -28,7 +29,6 @@ using SkiaSharp.Views.Maui.Controls;
 
 using Rectangle = Microsoft.Maui.Graphics.Rect;
 #else
-using Mapsui.UI.Forms.Extensions;
 using Xamarin.Forms;
 #endif
 
@@ -60,7 +60,6 @@ namespace Mapsui.UI.Forms
         private readonly SKPicture _pictNorthing;
         private readonly ObservableRangeCollection<Pin> _pins = new ObservableRangeCollection<Pin>();
         private readonly ObservableRangeCollection<Drawable> _drawable = new ObservableRangeCollection<Drawable>();
-        private readonly ObservableRangeCollection<Callout> _callouts = new ObservableRangeCollection<Callout>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Mapsui.UI.Forms.MapView"/> class.
@@ -150,7 +149,6 @@ namespace Mapsui.UI.Forms
         #region Bindings
 
         public static readonly BindableProperty SelectedPinProperty = BindableProperty.Create(nameof(SelectedPin), typeof(Pin), typeof(MapView), default(Pin), defaultBindingMode: BindingMode.TwoWay);
-        public static readonly BindableProperty UniqueCalloutProperty = BindableProperty.Create(nameof(UniqueCallout), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
         public static readonly BindableProperty MyLocationEnabledProperty = BindableProperty.Create(nameof(MyLocationEnabled), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
         public static readonly BindableProperty MyLocationFollowProperty = BindableProperty.Create(nameof(MyLocationFollow), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
         public static readonly BindableProperty UnSnapRotationDegreesProperty = BindableProperty.Create(nameof(UnSnapRotationDegreesProperty), typeof(double), typeof(MapView), default(double));
@@ -233,15 +231,6 @@ namespace Mapsui.UI.Forms
         {
             get => (Pin?)GetValue(SelectedPinProperty);
             set => SetValue(SelectedPinProperty, value);
-        }
-
-        /// <summary>
-        /// Single or multiple callouts possible
-        /// </summary>
-        public bool UniqueCallout
-        {
-            get => (bool)GetValue(UniqueCalloutProperty);
-            set => SetValue(UniqueCalloutProperty, value);
         }
 
         /// <summary>
@@ -331,42 +320,6 @@ namespace Mapsui.UI.Forms
         }
 
         #endregion
-
-        internal void AddCallout(Callout callout)
-        {
-            if (!_callouts.Contains(callout))
-            {
-                if (UniqueCallout)
-                    HideCallouts();
-
-                _callouts.Add(callout);
-
-                Refresh();
-            }
-        }
-
-        internal void RemoveCallout(Callout? callout)
-        {
-            if (callout != null && _callouts.Contains(callout))
-            {
-                _callouts.Remove(callout);
-
-                Refresh();
-            }
-        }
-
-        internal bool IsCalloutVisible(Callout callout)
-        {
-            return _callouts.Contains(callout);
-        }
-
-        /// <summary>
-        /// Hide all visible callouts
-        /// </summary>
-        public void HideCallouts()
-        {
-            _callouts.Clear();
-        }
 
         IEnumerator IEnumerable.GetEnumerator()
         {

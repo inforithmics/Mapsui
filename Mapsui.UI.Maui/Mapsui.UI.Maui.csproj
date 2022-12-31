@@ -13,8 +13,6 @@
   <ItemGroup>
     <Compile Include="..\Mapsui.UI.Forms\EventArgs\CalloutClickedEventArgs.cs" Link="EventArgs\CalloutClickedEventArgs.cs" />
     <Compile Include="..\Mapsui.UI.Forms\EventArgs\DrawableClickedEventArgs.cs" Link="EventArgs\DrawableClickedEventArgs.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\EventArgs\MapClickedEventArgs.cs" Link="EventArgs\MapClickedEventArgs.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\EventArgs\MapLongClickedEventArgs.cs" Link="EventArgs\MapLongClickedEventArgs.cs" />
     <Compile Include="..\Mapsui.UI.Forms\EventArgs\PinClickedEventArgs.cs" Link="EventArgs\PinClickedEventArgs.cs" />
     <Compile Include="..\Mapsui.UI.Forms\EventArgs\SelectedPinChangedEventArgs.cs" Link="EventArgs\SelectedPinChangedEventArgs.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Extensions\ColorExtensions.cs" Link="Extensions\ColorExtensions.cs" />

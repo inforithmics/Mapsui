@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Mapsui.UI.Maui.Extensions;
+using Mapsui.UI.Extensions;
 using Color = Microsoft.Maui.Graphics.Color;
 
 namespace Mapsui.UI.Maui

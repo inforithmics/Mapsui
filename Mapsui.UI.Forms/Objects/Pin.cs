@@ -23,11 +23,7 @@ using Color = Xamarin.Forms.Color;
 using KnownColor = Xamarin.Forms.Color;
 #endif
 
-#if __MAUI__
-namespace Mapsui.UI.Maui
-#else
-namespace Mapsui.UI.Forms
-#endif
+namespace Mapsui.UI.Objects
 {
     public class Pin : BindableObject, IFeatureProvider, IDisposable
     {
@@ -37,7 +33,7 @@ namespace Mapsui.UI.Forms
         private string _bitmapIdKey = string.Empty; // Key for active _bitmapIds entry
         private int _bitmapId = -1;
         private byte[]? _bitmapData;
-        private MapView? _mapView;
+        private IMapView? _mapView;
 
         public static readonly BindableProperty TypeProperty = BindableProperty.Create(nameof(Type), typeof(PinType), typeof(Pin), default(PinType));
         public static readonly BindableProperty PositionProperty = BindableProperty.Create(nameof(Position), typeof(Position), typeof(Pin), default(Position));
@@ -61,7 +57,7 @@ namespace Mapsui.UI.Forms
         /// Initializes a new instance of the <see cref="T:Mapsui.UI.Forms.Pin"/> class
         /// </summary>
         /// <param name="mapView">MapView to which this pin belongs</param>
-        public Pin(MapView mapView)
+        public Pin(IMapView mapView)
         {
             _mapView = mapView;
 
@@ -78,7 +74,7 @@ namespace Mapsui.UI.Forms
         /// <summary>
         /// Internal MapView for refreshing of screen
         /// </summary>
-        internal MapView? MapView
+        internal IMapView? MapView
         {
             get => _mapView;
             set

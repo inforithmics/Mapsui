@@ -10,7 +10,6 @@ using Mapsui.Layers;
 using Mapsui.Logging;
 using Mapsui.Utilities;
 #if __MAUI__
-using Mapsui.UI.Maui.Extensions;
 using Microsoft.Maui;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;

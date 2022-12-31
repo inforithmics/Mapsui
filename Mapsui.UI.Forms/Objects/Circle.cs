@@ -4,11 +4,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Mapsui.Nts;
 using Mapsui.Styles;
+using Mapsui.UI.Extensions;
 using Mapsui.UI.Objects;
 using NetTopologySuite.Geometries;
 
 #if __MAUI__
-using Mapsui.UI.Maui.Extensions;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Mapsui.UI.Maui;
@@ -17,17 +17,12 @@ using Color = Microsoft.Maui.Graphics.Color;
 using KnownColor = Mapsui.UI.Maui.KnownColor;
 #else
 using Xamarin.Forms;
-using Mapsui.UI.Forms.Extensions;
 
 using Color = Xamarin.Forms.Color;
 using KnownColor = Xamarin.Forms.Color;
 #endif
 
-#if __MAUI__
-namespace Mapsui.UI.Maui
-#else
-namespace Mapsui.UI.Forms
-#endif
+namespace Mapsui.UI.Objects
 {
     public class Circle : Drawable
     {

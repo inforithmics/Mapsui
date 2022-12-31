@@ -1,9 +1,7 @@
 ﻿using Mapsui.Projections;
-#if __MAUI__
-namespace Mapsui.UI.Maui.Extensions
-#else
-namespace Mapsui.UI.Forms.Extensions
-#endif
+using Mapsui.UI.Objects;
+
+namespace Mapsui.UI.Extensions
 {
     public static class PositionExtensions
     {

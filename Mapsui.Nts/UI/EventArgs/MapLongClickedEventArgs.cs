@@ -1,10 +1,7 @@
 ﻿using System;
+using Mapsui.UI.Objects;
 
-#if __MAUI__
-namespace Mapsui.UI.Maui
-#else
-namespace Mapsui.UI.Forms
-#endif
+namespace Mapsui.UI
 {
     public sealed class MapLongClickedEventArgs : EventArgs
     {

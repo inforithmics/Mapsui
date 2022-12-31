@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using Avalonia;
+using Avalonia.Data;
+using Mapsui.UI.Objects;
 
 #if __MAUI__
 using Microsoft.Maui.Controls;
@@ -24,7 +28,55 @@ namespace Mapsui.UI.Eto
 namespace Mapsui.UI.Wpf
 #endif
 {
-    public partial class MapView : MapControl
+    public partial class MapView : MapControl, IMapView, IMapViewInternal
     {
+        public static readonly BindableProperty UniqueCalloutProperty = BindableProperty.Create(nameof(UniqueCallout), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
+
+        private readonly ObservableRangeCollection<ICallout> _callouts = new ObservableRangeCollection<ICallout>();
+        
+        /// <summary>
+        /// Single or multiple callouts possible
+        /// </summary>
+        public bool UniqueCallout
+        {
+            get => (bool)GetValue(UniqueCalloutProperty);
+            set => SetValue(UniqueCalloutProperty, value);
+        }
+        
+        /// <summary>
+        /// Hide all visible callouts
+        /// </summary>
+        public void HideCallouts()
+        {
+            _callouts.Clear();
+        }
+        
+        void IMapViewInternal.AddCallout(ICallout callout)
+        {
+            if (!_callouts.Contains(callout))
+            {
+                if (UniqueCallout)
+                    HideCallouts();
+
+                _callouts.Add(callout);
+
+                Refresh();
+            }
+        }
+
+        void IMapViewInternal.RemoveCallout(ICallout? callout)
+        {
+            if (callout != null && _callouts.Contains(callout))
+            {
+                _callouts.Remove(callout);
+
+                Refresh();
+            }
+        }
+
+        bool IMapViewInternal.IsCalloutVisible(ICallout callout)
+        {
+            return _callouts.Contains(callout);
+        }
     }
 }

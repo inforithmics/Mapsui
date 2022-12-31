@@ -27,7 +27,7 @@ namespace Mapsui.UI.Objects
             }
         }
 
-        private void Collection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void Collection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
             switch (e.Action)
             {

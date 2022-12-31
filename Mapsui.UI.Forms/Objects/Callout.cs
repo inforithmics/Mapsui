@@ -4,9 +4,10 @@ using System.Runtime.CompilerServices;
 using Mapsui.Extensions;
 using Mapsui.Nts;
 using Mapsui.Styles;
+using Mapsui.UI.Extensions;
 using Mapsui.UI.Objects;
+
 #if __MAUI__
-using Mapsui.UI.Maui.Extensions;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 
@@ -14,7 +15,6 @@ using Color = Microsoft.Maui.Graphics.Color;
 using KnownColor = Mapsui.UI.Maui.KnownColor;
 using Point = Microsoft.Maui.Graphics.Point;
 #else
-using Mapsui.UI.Forms.Extensions;
 using Xamarin.Forms;
 using CalloutStyle = Mapsui.Styles.CalloutStyle;
 
@@ -23,13 +23,9 @@ using KnownColor = Xamarin.Forms.Color;
 using Point = Xamarin.Forms.Point;
 #endif
 
-#if __MAUI__
-namespace Mapsui.UI.Maui
-#else
-namespace Mapsui.UI.Forms
-#endif
+namespace Mapsui.UI.Objects
 {
-    public class Callout : BindableObject, IFeatureProvider, IDisposable
+    public class Callout : BindableObject, IFeatureProvider, IDisposable, ICallout
     {
         private readonly Pin _pin;
 
@@ -56,152 +52,152 @@ namespace Mapsui.UI.Forms
         /// <summary>
         /// Bindable property for the <see cref="Type"/> property
         /// </summary>
-        public static readonly BindableProperty TypeProperty = BindableProperty.Create(nameof(Type), typeof(CalloutType), typeof(MapView), default(CalloutType));
+        public static readonly BindableProperty TypeProperty = BindableProperty.Create(nameof(Type), typeof(CalloutType), typeof(Callout), default(CalloutType));
 
         /// <summary>
         /// Bindable property for the <see cref="Anchor"/> property
         /// </summary>
-        public static readonly BindableProperty AnchorProperty = BindableProperty.Create(nameof(Anchor), typeof(Point), typeof(MapView), default(Point));
+        public static readonly BindableProperty AnchorProperty = BindableProperty.Create(nameof(Anchor), typeof(Point), typeof(Callout), default(Point));
 
         /// <summary>
         /// Bindable property for the <see cref="ArrowAlignment"/> property
         /// </summary>
-        public static readonly BindableProperty ArrowAlignmentProperty = BindableProperty.Create(nameof(ArrowAlignment), typeof(ArrowAlignment), typeof(MapView), default(ArrowAlignment), defaultBindingMode: BindingMode.TwoWay);
+        public static readonly BindableProperty ArrowAlignmentProperty = BindableProperty.Create(nameof(ArrowAlignment), typeof(ArrowAlignment), typeof(Callout), default(ArrowAlignment), defaultBindingMode: BindingMode.TwoWay);
 
         /// <summary>
         /// Bindable property for the <see cref="ArrowWidth"/> property
         /// </summary>
-        public static readonly BindableProperty ArrowWidthProperty = BindableProperty.Create(nameof(ArrowWidth), typeof(double), typeof(MapView), 12.0);
+        public static readonly BindableProperty ArrowWidthProperty = BindableProperty.Create(nameof(ArrowWidth), typeof(double), typeof(Callout), 12.0);
 
         /// <summary>
         /// Bindable property for the <see cref="ArrowHeight"/> property
         /// </summary>
-        public static readonly BindableProperty ArrowHeightProperty = BindableProperty.Create(nameof(ArrowHeight), typeof(double), typeof(MapView), 16.0);
+        public static readonly BindableProperty ArrowHeightProperty = BindableProperty.Create(nameof(ArrowHeight), typeof(double), typeof(Callout), 16.0);
 
         /// <summary>
         /// Bindable property for the <see cref="ArrowPosition"/> property
         /// </summary>
-        public static readonly BindableProperty ArrowPositionProperty = BindableProperty.Create(nameof(ArrowPosition), typeof(double), typeof(MapView), 0.5);
+        public static readonly BindableProperty ArrowPositionProperty = BindableProperty.Create(nameof(ArrowPosition), typeof(double), typeof(Callout), 0.5);
 
         /// <summary>
         /// Bindable property for the <see cref="Color"/> property
         /// </summary>
-        public static readonly BindableProperty ColorProperty = BindableProperty.Create(nameof(Color), typeof(Color), typeof(MapView), KnownColor.White);
+        public static readonly BindableProperty ColorProperty = BindableProperty.Create(nameof(Color), typeof(Color), typeof(Callout), KnownColor.White);
 
         /// <summary>
         /// Bindable property for the <see cref="BackgroundColor"/> property
         /// </summary>
-        public static readonly BindableProperty BackgroundColorProperty = BindableProperty.Create(nameof(BackgroundColor), typeof(Color), typeof(MapView), KnownColor.White);
+        public static readonly BindableProperty BackgroundColorProperty = BindableProperty.Create(nameof(BackgroundColor), typeof(Color), typeof(Callout), KnownColor.White);
 
         /// <summary>
         /// Bindable property for the <see cref="ShadowWidth"/> property
         /// </summary>
-        public static readonly BindableProperty ShadowWidthProperty = BindableProperty.Create(nameof(ShadowWidth), typeof(double), typeof(MapView), default(double));
+        public static readonly BindableProperty ShadowWidthProperty = BindableProperty.Create(nameof(ShadowWidth), typeof(double), typeof(Callout), default(double));
 
         /// <summary>
         /// Bindable property for the <see cref="StrokeWidth"/> property
         /// </summary>
-        public static readonly BindableProperty StrokeWidthProperty = BindableProperty.Create(nameof(StrokeWidth), typeof(double), typeof(MapView), default(double));
+        public static readonly BindableProperty StrokeWidthProperty = BindableProperty.Create(nameof(StrokeWidth), typeof(double), typeof(Callout), default(double));
 
         /// <summary>
         /// Bindable property for the <see cref="Rotation"/> property
         /// </summary>
-        public static readonly BindableProperty RotationProperty = BindableProperty.Create(nameof(Rotation), typeof(double), typeof(MapView), default(double));
+        public static readonly BindableProperty RotationProperty = BindableProperty.Create(nameof(Rotation), typeof(double), typeof(Callout), default(double));
 
         /// <summary>
         /// Bindable property for the <see cref="RotateWithMap"/> property
         /// </summary>
-        public static readonly BindableProperty RotateWithMapProperty = BindableProperty.Create(nameof(RotateWithMap), typeof(bool), typeof(MapView), false);
+        public static readonly BindableProperty RotateWithMapProperty = BindableProperty.Create(nameof(RotateWithMap), typeof(bool), typeof(Callout), false);
 
         /// <summary>
         /// Bindable property for the <see cref="RectRadius"/> property
         /// </summary>
-        public static readonly BindableProperty RectRadiusProperty = BindableProperty.Create(nameof(RectRadius), typeof(double), typeof(MapView), default(double));
+        public static readonly BindableProperty RectRadiusProperty = BindableProperty.Create(nameof(RectRadius), typeof(double), typeof(Callout), default(double));
 
         /// <summary>
         /// Bindable property for the <see cref="Padding"/> property
         /// </summary>
-        public static readonly BindableProperty PaddingProperty = BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(MapView), new Thickness(6));
+        public static readonly BindableProperty PaddingProperty = BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(Callout), new Thickness(6));
 
         /// <summary>
         /// Bindable property for the <see cref="Spacing"/> property
         /// </summary>
-        public static readonly BindableProperty SpacingProperty = BindableProperty.Create(nameof(Spacing), typeof(double), typeof(MapView), 2.0);
+        public static readonly BindableProperty SpacingProperty = BindableProperty.Create(nameof(Spacing), typeof(double), typeof(Callout), 2.0);
 
         /// <summary>
         /// Bindable property for the <see cref="MaxWidth"/> property
         /// </summary>
-        public static readonly BindableProperty MaxWidthProperty = BindableProperty.Create(nameof(MaxWidth), typeof(double), typeof(MapView), 300.0);
+        public static readonly BindableProperty MaxWidthProperty = BindableProperty.Create(nameof(MaxWidth), typeof(double), typeof(Callout), 300.0);
 
         /// <summary>
         /// Bindable property for the <see cref="IsClosableByClick"/> property
         /// </summary>
-        public static readonly BindableProperty IsClosableByClickProperty = BindableProperty.Create(nameof(IsClosableByClick), typeof(bool), typeof(MapView), true);
+        public static readonly BindableProperty IsClosableByClickProperty = BindableProperty.Create(nameof(IsClosableByClick), typeof(bool), typeof(Callout), true);
 
         /// <summary>
         /// Bindable property for the <see cref="Content"/> property
         /// </summary>
-        public static readonly BindableProperty ContentProperty = BindableProperty.Create(nameof(Content), typeof(int), typeof(MapView), -1);
+        public static readonly BindableProperty ContentProperty = BindableProperty.Create(nameof(Content), typeof(int), typeof(Callout), -1);
 
         /// <summary>
         /// Bindable property for the <see cref="Title"/> property
         /// </summary>
-        public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(MapView));
+        public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(Callout));
 
         /// <summary>
         /// Bindable property for the <see cref="TitleFontName"/> property
         /// </summary>
-        public static readonly BindableProperty TitleFontNameProperty = BindableProperty.Create(nameof(TitleFontName), typeof(string), typeof(MapView), DefaultTitleFontName);
+        public static readonly BindableProperty TitleFontNameProperty = BindableProperty.Create(nameof(TitleFontName), typeof(string), typeof(Callout), DefaultTitleFontName);
 
         /// <summary>
         /// Bindable property for the <see cref="TitleFontSize"/> property
         /// </summary>
-        public static readonly BindableProperty TitleFontSizeProperty = BindableProperty.Create(nameof(TitleFontSize), typeof(double), typeof(MapView), DefaultTitleFontSize);
+        public static readonly BindableProperty TitleFontSizeProperty = BindableProperty.Create(nameof(TitleFontSize), typeof(double), typeof(Callout), DefaultTitleFontSize);
 
         /// <summary>
         /// Bindable property for the <see cref="TitleFontAttributes"/> property
         /// </summary>
-        public static readonly BindableProperty TitleFontAttributesProperty = BindableProperty.Create(nameof(TitleFontAttributes), typeof(FontAttributes), typeof(MapView), DefaultTitleFontAttributes);
+        public static readonly BindableProperty TitleFontAttributesProperty = BindableProperty.Create(nameof(TitleFontAttributes), typeof(FontAttributes), typeof(Callout), DefaultTitleFontAttributes);
 
         /// <summary>
         /// Bindable property for the <see cref="TitleFontColor"/> property
         /// </summary>
-        public static readonly BindableProperty TitleFontColorProperty = BindableProperty.Create(nameof(TitleFontColor), typeof(Color), typeof(MapView), DefaultTitleFontColor);
+        public static readonly BindableProperty TitleFontColorProperty = BindableProperty.Create(nameof(TitleFontColor), typeof(Color), typeof(Callout), DefaultTitleFontColor);
 
         /// <summary>
         /// Bindable property for the <see cref="TitleTextAlignment"/> property
         /// </summary>
-        public static readonly BindableProperty TitleTextAlignmentProperty = BindableProperty.Create(nameof(TitleTextAlignment), typeof(TextAlignment), typeof(MapView), DefaultTitleTextAlignment);
+        public static readonly BindableProperty TitleTextAlignmentProperty = BindableProperty.Create(nameof(TitleTextAlignment), typeof(TextAlignment), typeof(Callout), DefaultTitleTextAlignment);
 
         /// <summary>
         /// Bindable property for the <see cref="Subtitle"/> property
         /// </summary>
-        public static readonly BindableProperty SubtitleProperty = BindableProperty.Create(nameof(Subtitle), typeof(string), typeof(MapView));
+        public static readonly BindableProperty SubtitleProperty = BindableProperty.Create(nameof(Subtitle), typeof(string), typeof(Callout));
 
         /// <summary>
         /// Bindable property for the <see cref="SubtitleFontName"/> property
         /// </summary>
-        public static readonly BindableProperty SubtitleFontNameProperty = BindableProperty.Create(nameof(SubtitleFontName), typeof(string), typeof(MapView), DefaultSubtitleFontName);
+        public static readonly BindableProperty SubtitleFontNameProperty = BindableProperty.Create(nameof(SubtitleFontName), typeof(string), typeof(Callout), DefaultSubtitleFontName);
 
         /// <summary>
         /// Bindable property for the <see cref="SubtitleFontSize"/> property
         /// </summary>
-        public static readonly BindableProperty SubtitleFontSizeProperty = BindableProperty.Create(nameof(SubtitleFontSize), typeof(double), typeof(MapView), DefaultSubtitleFontSize);
+        public static readonly BindableProperty SubtitleFontSizeProperty = BindableProperty.Create(nameof(SubtitleFontSize), typeof(double), typeof(Callout), DefaultSubtitleFontSize);
 
         /// <summary>
         /// Bindable property for the <see cref="SubtitleFontAttributes"/> property
         /// </summary>
-        public static readonly BindableProperty SubtitleFontAttributesProperty = BindableProperty.Create(nameof(SubtitleFontAttributes), typeof(FontAttributes), typeof(MapView), DefaultSubtitleFontAttributes);
+        public static readonly BindableProperty SubtitleFontAttributesProperty = BindableProperty.Create(nameof(SubtitleFontAttributes), typeof(FontAttributes), typeof(Callout), DefaultSubtitleFontAttributes);
 
         /// <summary>
         /// Bindable property for the <see cref="SubtitleFontColor"/> property
         /// </summary>
-        public static readonly BindableProperty SubtitleFontColorProperty = BindableProperty.Create(nameof(SubtitleFontColor), typeof(Color), typeof(MapView), DefaultSubtitleFontColor);
+        public static readonly BindableProperty SubtitleFontColorProperty = BindableProperty.Create(nameof(SubtitleFontColor), typeof(Color), typeof(Callout), DefaultSubtitleFontColor);
 
         /// <summary>
         /// Bindable property for the <see cref="SubtitleTextAlignment"/> property
         /// </summary>
-        public static readonly BindableProperty SubtitleTextAlignmentProperty = BindableProperty.Create(nameof(SubtitleTextAlignment), typeof(TextAlignment), typeof(MapView), DefaultSubtitleTextAlignment);
+        public static readonly BindableProperty SubtitleTextAlignmentProperty = BindableProperty.Create(nameof(SubtitleTextAlignment), typeof(TextAlignment), typeof(Callout), DefaultSubtitleTextAlignment);
 
         #endregion
 
