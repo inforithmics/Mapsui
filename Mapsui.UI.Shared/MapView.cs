@@ -23,6 +23,7 @@ namespace Mapsui.UI.WinUI
 using Xamarin.Forms;
 namespace Mapsui.UI.Forms
 #elif __AVALONIA__
+using Avalonia.Data;
 namespace Mapsui.UI.Avalonia
 #elif __ETO_FORMS__
 namespace Mapsui.UI.Eto
@@ -33,10 +34,9 @@ namespace Mapsui.UI.Wpf
 {
     public partial class MapView : MapControl, IMapView, IMapViewInternal
     {
-#if __ANDROID__ || __IOS__
+#if __ANDROID__ || __IOS__ || __ETO_FORMS__
         private Dictionary<object, object> properties = new Dictionary<object, object>();
 #endif
-        
         public static readonly BindableProperty UniqueCalloutProperty = BindableProperty.Create(nameof(UniqueCallout), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
 
         private readonly ObservableRangeCollection<ICallout> _callouts = new ObservableRangeCollection<ICallout>();
@@ -50,7 +50,7 @@ namespace Mapsui.UI.Wpf
             set => SetValue(UniqueCalloutProperty, value);
         }
         
-#if __ANDROID__ || __IOS__
+#if __ANDROID__ || __IOS__ || __ETO_FORMS__
         private object GetValue(object property)
         {
             properties.TryGetValue(property, out var result);

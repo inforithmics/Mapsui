@@ -3,14 +3,20 @@
 using Avalonia;
 using Avalonia.Data;
 using Avalonia.Interactivity;
+#elif __WINUI__
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Data;
+#elif __UWP__
+using System.UI.Xaml;
+using System.UI.Xaml.Data;
 #endif
 
-#if __ANDROID__ || __IOS__ || __AVALONIA__ || __WPF__
+#if __ANDROID__ || __IOS__ || __AVALONIA__ || __WPF__ || __WINUI__ || __UWP__ || __ETO_FORMS__
 namespace Mapsui.UI.Utils
 {
 #if __AVALONIA__
-publi class BindableProperty : AttachedProperty<object>
-#elif  __WPF__
+public class BindableProperty : AttachedProperty<object>
+#elif  __WPF__ || __WINUI__ || __UWP__
 public class BindableProperty : DependencyProperty
 #else
 public class BindableProperty    
