@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net48</TargetFrameworks>
     <UseWpf>true</UseWpf>
+    <DefineConstants>__WPF__</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

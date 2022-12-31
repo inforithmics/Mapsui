@@ -19,6 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)IMapViewInternal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\BindingMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlingTracker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\PCLTimer.cs" />
   </ItemGroup>
