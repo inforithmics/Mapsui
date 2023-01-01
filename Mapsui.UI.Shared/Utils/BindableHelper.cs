@@ -9,7 +9,7 @@ namespace Mapsui.UI.Utils
             Type returnType, 
             Type declaringType, 
             object defaultValue, 
-            BindingMode defaultBindingMode = BindingMode.TwoWay)
+            BindingMode defaultBindingMode = BindingMode.OneWay)
         {
 #if __AVALONIA__
             // Copied from this Method

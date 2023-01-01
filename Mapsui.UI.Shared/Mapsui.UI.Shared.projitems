@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Enums\TouchMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\ZoomDirection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgs\CalloutClickedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\DrawableEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\HoveredEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\SwipedEventArgs.cs" />
@@ -23,9 +24,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)IMapViewInternal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\Callout.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\Drawable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\IClickable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\IDrawable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\Pin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableProperty.cs" />

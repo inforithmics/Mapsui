@@ -29,10 +29,11 @@ namespace Mapsui.UI
                     Catch.TaskRun(() => tuple?.Item1(tuple.Item2));
 #pragma warning restore CS4014 // Missing await #pragma directive
                     await Task.Delay(period);
-                }
-            }, Tuple.Create(callback, state), CancellationToken.None,
-                TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.OnlyOnRanToCompletion,
-                TaskScheduler.Default);
+                } 
+            }, 
+            Tuple.Create(callback, state), CancellationToken.None,
+            TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.OnlyOnRanToCompletion,
+            TaskScheduler.Default);
         }
 
         public new void Dispose() { Cancel(); }
