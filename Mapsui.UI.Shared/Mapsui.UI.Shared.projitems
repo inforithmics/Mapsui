@@ -11,18 +11,23 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Enums\TouchMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\ZoomDirection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgs\DrawableEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\HoveredEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\SwipedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TappedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TouchedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\ZoomedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\PropertiesInternalExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GlobalBindingUsings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsingsUI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IPropertiesInternal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IMapViewInternal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\Drawable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\IClickable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\IDrawable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindingMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlingTracker.cs" />
