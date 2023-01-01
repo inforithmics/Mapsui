@@ -55,6 +55,7 @@
 
   <ItemGroup>
     <Folder Include="EventArgs" />
+    <Folder Include="Extensions" />
     <Folder Include="Utils" />
   </ItemGroup>
 

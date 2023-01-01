@@ -20,7 +20,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TappedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TouchedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\ZoomedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ColorExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PositionExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\PropertiesInternalExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextAlignmentExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GlobalUsingsUI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IPropertiesInternal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IMapViewInternal.cs" />

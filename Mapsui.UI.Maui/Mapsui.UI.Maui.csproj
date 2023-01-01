@@ -11,20 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\Mapsui.UI.Forms\EventArgs\CalloutClickedEventArgs.cs" Link="EventArgs\CalloutClickedEventArgs.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\EventArgs\PinClickedEventArgs.cs" Link="EventArgs\PinClickedEventArgs.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\EventArgs\SelectedPinChangedEventArgs.cs" Link="EventArgs\SelectedPinChangedEventArgs.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Extensions\ColorExtensions.cs" Link="Extensions\ColorExtensions.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Extensions\PositionExtensions.cs" Link="Extensions\PositionExtensions.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Extensions\TextAlignmentExtensions.cs" Link="Extensions\TextAlignmentExtensions.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Extensions\ZoomLevelExtensions.cs" Link="Extensions\ZoomLevelExtensions.cs" />
     <Compile Include="..\Mapsui.UI.Forms\MapControl.cs" Link="MapControl.cs" />
     <Compile Include="..\Mapsui.UI.Forms\MapView.cs" Link="MapView.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Objects\Circle.cs" Link="Objects\Circle.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\MyLocationLayer.cs" Link="Objects\MyLocationLayer.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Objects\Polygon.cs" Link="Objects\Polygon.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Objects\Polyline.cs" Link="Objects\Polyline.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Utils\PolylineConverter.cs" Link="Utils\PolylineConverter.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="EventArgs" />
+    <Folder Include="Extensions" />
     <Folder Include="Extensions\" />
     <Folder Include="EventArgs\" />
     <Folder Include="Images\" />
