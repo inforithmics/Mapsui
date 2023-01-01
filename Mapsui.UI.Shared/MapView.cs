@@ -7,39 +7,33 @@ using Mapsui.UI.Objects;
 using Mapsui.UI.Utils;
 
 #if __MAUI__
-using Microsoft.Maui.Controls;
 namespace Mapsui.UI.Maui
 #elif __UWP__
-using Windows.UI.Xaml.Data;
 namespace Mapsui.UI.Uwp
 #elif __ANDROID__ && !HAS_UNO_WINUI
 namespace Mapsui.UI.Android
 #elif __IOS__ && !HAS_UNO_WINUI
 namespace Mapsui.UI.iOS
 #elif __WINUI__
-using Microsoft.UI.Xaml.Data;
 namespace Mapsui.UI.WinUI
 #elif __FORMS__
-using Xamarin.Forms;
 namespace Mapsui.UI.Forms
 #elif __AVALONIA__
-using Avalonia.Data;
 namespace Mapsui.UI.Avalonia
 #elif __ETO_FORMS__
 namespace Mapsui.UI.Eto
 #else
-using System.Windows.Data;
 namespace Mapsui.UI.Wpf
 #endif
 {
     public partial class MapView : MapControl, IMapView, IMapViewInternal
     {
 #if __ANDROID__ || __IOS__ || __ETO_FORMS__
-        private Dictionary<object, object> properties = new Dictionary<object, object>();
+        Dictionary<object,object> IPropertiesInternal.Properties { get; } = new();
 #endif
-        public static readonly BindableProperty UniqueCalloutProperty = BindableProperty.Create(nameof(UniqueCallout), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
+        public static readonly BindableProperty UniqueCalloutProperty = BindableHelper.Create(nameof(UniqueCallout), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
 
-        private readonly ObservableRangeCollection<ICallout> _callouts = new ObservableRangeCollection<ICallout>();
+        private readonly ObservableRangeCollection<ICallout> _callouts = new();
         
         /// <summary>
         /// Single or multiple callouts possible
@@ -49,20 +43,7 @@ namespace Mapsui.UI.Wpf
             get => (bool)GetValue(UniqueCalloutProperty);
             set => SetValue(UniqueCalloutProperty, value);
         }
-        
-#if __ANDROID__ || __IOS__ || __ETO_FORMS__
-        private object GetValue(object property)
-        {
-            properties.TryGetValue(property, out var result);
-            return result;
-        }
 
-        private void SetValue(object property, object value)
-        {
-            properties[property] = value;
-        }
-#endif        
-        
         /// <summary>
         /// Hide all visible callouts
         /// </summary>

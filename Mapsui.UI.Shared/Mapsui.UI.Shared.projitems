@@ -16,9 +16,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TappedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TouchedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\ZoomedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PropertiesInternalExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalBindingUsings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPropertiesInternal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IMapViewInternal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindingMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlingTracker.cs" />

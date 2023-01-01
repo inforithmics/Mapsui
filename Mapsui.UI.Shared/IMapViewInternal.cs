@@ -2,7 +2,11 @@
 
 namespace Mapsui.UI
 {
-    public interface IMapViewInternal
+#if  __ANDROID__ || __IOS__ || __ETO_FORMS__
+    internal interface IMapViewInternal : IPropertiesInternal
+#else    
+    internal interface IMapViewInternal
+#endif
     {
         void RemoveCallout(ICallout callout);
         void AddCallout(ICallout callout);
