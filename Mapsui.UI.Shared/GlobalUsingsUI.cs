@@ -21,6 +21,7 @@ global using System.Windows;
 global using System.Windows.Data;
 
 global using BindableProperty = System.Windows.DependencyProperty;
+global using Point = System.Windows.Point;
 #elif __MAUI__
 global using Microsoft.Maui.Controls;
 

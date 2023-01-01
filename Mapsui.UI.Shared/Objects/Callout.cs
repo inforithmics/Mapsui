@@ -220,8 +220,8 @@ namespace Mapsui.UI.Objects
         /// </remarks>
         public CalloutType Type
         {
-            get => (CalloutType)GetValue(TypeProperty);
-            set => SetValue(TypeProperty, value);
+            get => (CalloutType)this.GetValue(TypeProperty);
+            set => this.SetValue(TypeProperty, value);
         }
 
         /// <summary>
@@ -229,8 +229,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Point Anchor
         {
-            get => (Point)GetValue(AnchorProperty);
-            set => SetValue(AnchorProperty, value);
+            get => (Point)this.GetValue(AnchorProperty);
+            set => this.SetValue(AnchorProperty, value);
         }
 
         /// <summary>
@@ -238,8 +238,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public ArrowAlignment ArrowAlignment
         {
-            get => (ArrowAlignment)GetValue(ArrowAlignmentProperty);
-            set => SetValue(ArrowAlignmentProperty, value);
+            get => (ArrowAlignment)this.GetValue(ArrowAlignmentProperty);
+            set => this.SetValue(ArrowAlignmentProperty, value);
         }
 
         /// <summary>
@@ -247,8 +247,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double ArrowWidth
         {
-            get => (double)GetValue(ArrowWidthProperty);
-            set => SetValue(ArrowWidthProperty, value);
+            get => (double)this.GetValue(ArrowWidthProperty);
+            set => this.SetValue(ArrowWidthProperty, value);
         }
 
         /// <summary>
@@ -256,8 +256,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double ArrowHeight
         {
-            get => (double)GetValue(ArrowHeightProperty);
-            set => SetValue(ArrowHeightProperty, value);
+            get => (double)this.GetValue(ArrowHeightProperty);
+            set => this.SetValue(ArrowHeightProperty, value);
         }
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double ArrowPosition
         {
-            get => (double)GetValue(ArrowPositionProperty);
-            set => SetValue(ArrowPositionProperty, value);
+            get => (double)this.GetValue(ArrowPositionProperty);
+            set => this.SetValue(ArrowPositionProperty, value);
         }
 
         /// <summary>
@@ -274,8 +274,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color Color
         {
-            get => (Color)GetValue(ColorProperty);
-            set => SetValue(ColorProperty, value);
+            get => (Color)this.GetValue(ColorProperty);
+            set => this.SetValue(ColorProperty, value);
         }
 
         /// <summary>
@@ -283,8 +283,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color BackgroundColor
         {
-            get => (Color)GetValue(BackgroundColorProperty);
-            set => SetValue(BackgroundColorProperty, value);
+            get => (Color)this.GetValue(BackgroundColorProperty);
+            set => this.SetValue(BackgroundColorProperty, value);
         }
 
         /// <summary>
@@ -292,8 +292,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double ShadowWidth
         {
-            get => (double)GetValue(ShadowWidthProperty);
-            set => SetValue(ShadowWidthProperty, value);
+            get => (double)this.GetValue(ShadowWidthProperty);
+            set => this.SetValue(ShadowWidthProperty, value);
         }
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double StrokeWidth
         {
-            get => (double)GetValue(StrokeWidthProperty);
-            set => SetValue(StrokeWidthProperty, value);
+            get => (double)this.GetValue(StrokeWidthProperty);
+            set => this.SetValue(StrokeWidthProperty, value);
         }
 
         /// <summary>
@@ -310,8 +310,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double Rotation
         {
-            get => (double)GetValue(RotationProperty);
-            set => SetValue(RotationProperty, value);
+            get => (double)this.GetValue(RotationProperty);
+            set => this.SetValue(RotationProperty, value);
         }
 
         /// <summary>
@@ -319,8 +319,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public bool RotateWithMap
         {
-            get => (bool)GetValue(RotateWithMapProperty);
-            set => SetValue(RotateWithMapProperty, value);
+            get => (bool)this.GetValue(RotateWithMapProperty);
+            set => this.SetValue(RotateWithMapProperty, value);
         }
 
         /// <summary>
@@ -328,8 +328,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double RectRadius
         {
-            get => (double)GetValue(RectRadiusProperty);
-            set => SetValue(RectRadiusProperty, value);
+            get => (double)this.GetValue(RectRadiusProperty);
+            set => this.SetValue(RectRadiusProperty, value);
         }
 
         /// <summary>
@@ -337,8 +337,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Thickness Padding
         {
-            get => (Thickness)GetValue(PaddingProperty);
-            set => SetValue(PaddingProperty, value);
+            get => (Thickness)this.GetValue(PaddingProperty);
+            set => this.SetValue(PaddingProperty, value);
         }
 
         /// <summary>
@@ -346,8 +346,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double Spacing
         {
-            get => (double)GetValue(SpacingProperty);
-            set => SetValue(SpacingProperty, value);
+            get => (double)this.GetValue(SpacingProperty);
+            set => this.SetValue(SpacingProperty, value);
         }
 
         /// <summary>
@@ -355,8 +355,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double MaxWidth
         {
-            get => (double)GetValue(MaxWidthProperty);
-            set => SetValue(MaxWidthProperty, value);
+            get => (double)this.GetValue(MaxWidthProperty);
+            set => this.SetValue(MaxWidthProperty, value);
         }
 
         /// <summary>
@@ -369,8 +369,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public bool IsClosableByClick
         {
-            get => (bool)GetValue(IsClosableByClickProperty);
-            set => SetValue(IsClosableByClickProperty, value);
+            get => (bool)this.GetValue(IsClosableByClickProperty);
+            set => this.SetValue(IsClosableByClickProperty, value);
         }
 
         /// <summary>
@@ -378,8 +378,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public int Content
         {
-            get => (int)GetValue(ContentProperty);
-            set => SetValue(ContentProperty, value);
+            get => (int)this.GetValue(ContentProperty);
+            set => this.SetValue(ContentProperty, value);
         }
 
         /// <summary>
@@ -387,8 +387,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public string Title
         {
-            get => (string)GetValue(TitleProperty);
-            set => SetValue(TitleProperty, value);
+            get => (string)this.GetValue(TitleProperty);
+            set => this.SetValue(TitleProperty, value);
         }
 
         /// <summary>
@@ -396,8 +396,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public string TitleFontName
         {
-            get => (string)GetValue(TitleFontNameProperty);
-            set => SetValue(TitleFontNameProperty, value);
+            get => (string)this.GetValue(TitleFontNameProperty);
+            set =>this. SetValue(TitleFontNameProperty, value);
         }
 
         /// <summary>
@@ -405,8 +405,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double TitleFontSize
         {
-            get => (double)GetValue(TitleFontSizeProperty);
-            set => SetValue(TitleFontSizeProperty, value);
+            get => (double)this.GetValue(TitleFontSizeProperty);
+            set => this.SetValue(TitleFontSizeProperty, value);
         }
 
         /// <summary>
@@ -414,8 +414,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public FontAttributes TitleFontAttributes
         {
-            get => (FontAttributes)GetValue(TitleFontAttributesProperty);
-            set => SetValue(TitleFontAttributesProperty, value);
+            get => (FontAttributes)this.GetValue(TitleFontAttributesProperty);
+            set => this.SetValue(TitleFontAttributesProperty, value);
         }
 
         /// <summary>
@@ -423,8 +423,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color TitleFontColor
         {
-            get => (Color)GetValue(TitleFontColorProperty);
-            set => SetValue(TitleFontColorProperty, value);
+            get => (Color)this.GetValue(TitleFontColorProperty);
+            set => this.SetValue(TitleFontColorProperty, value);
         }
 
         /// <summary>
@@ -432,8 +432,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public TextAlignment TitleTextAlignment
         {
-            get => (TextAlignment)GetValue(TitleTextAlignmentProperty);
-            set => SetValue(TitleTextAlignmentProperty, value);
+            get => (TextAlignment)this.GetValue(TitleTextAlignmentProperty);
+            set => this.SetValue(TitleTextAlignmentProperty, value);
         }
 
         /// <summary>
@@ -441,8 +441,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public string Subtitle
         {
-            get => (string)GetValue(SubtitleProperty);
-            set => SetValue(SubtitleProperty, value);
+            get => (string)this.GetValue(SubtitleProperty);
+            set => this.SetValue(SubtitleProperty, value);
         }
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public string SubtitleFontName
         {
-            get => (string)GetValue(SubtitleFontNameProperty);
-            set => SetValue(SubtitleFontNameProperty, value);
+            get => (string)this.GetValue(SubtitleFontNameProperty);
+            set => this.SetValue(SubtitleFontNameProperty, value);
         }
 
         /// <summary>
@@ -459,8 +459,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double SubtitleFontSize
         {
-            get => (double)GetValue(SubtitleFontSizeProperty);
-            set => SetValue(SubtitleFontSizeProperty, value);
+            get => (double)this.GetValue(SubtitleFontSizeProperty);
+            set => this.SetValue(SubtitleFontSizeProperty, value);
         }
 
         /// <summary>
@@ -468,8 +468,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public FontAttributes SubtitleFontAttributes
         {
-            get => (FontAttributes)GetValue(SubtitleFontAttributesProperty);
-            set => SetValue(SubtitleFontAttributesProperty, value);
+            get => (FontAttributes)this.GetValue(SubtitleFontAttributesProperty);
+            set => this.SetValue(SubtitleFontAttributesProperty, value);
         }
 
         /// <summary>
@@ -477,8 +477,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color SubtitleFontColor
         {
-            get => (Color)GetValue(SubtitleFontColorProperty);
-            set => SetValue(SubtitleFontColorProperty, value);
+            get => (Color)this.GetValue(SubtitleFontColorProperty);
+            set => this.SetValue(SubtitleFontColorProperty, value);
         }
 
         /// <summary>
@@ -486,8 +486,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public TextAlignment SubtitleTextAlignment
         {
-            get => (TextAlignment)GetValue(SubtitleTextAlignmentProperty);
-            set => SetValue(SubtitleTextAlignmentProperty, value);
+            get => (TextAlignment)this.GetValue(SubtitleTextAlignmentProperty);
+            set => this.SetValue(SubtitleTextAlignmentProperty, value);
         }
 
         /// <summary>
