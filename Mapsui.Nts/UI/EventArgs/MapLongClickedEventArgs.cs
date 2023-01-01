@@ -16,7 +16,7 @@ namespace Mapsui.UI
         /// <value><c>true</c> if handled; otherwise, <c>false</c>.</value>
         public bool Handled { get; set; } = false;
 
-        internal MapLongClickedEventArgs(Position point)
+        public MapLongClickedEventArgs(Position point)
         {
             Point = point;
         }

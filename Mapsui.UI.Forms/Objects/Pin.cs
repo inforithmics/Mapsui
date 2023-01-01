@@ -33,7 +33,7 @@ namespace Mapsui.UI.Objects
         private string _bitmapIdKey = string.Empty; // Key for active _bitmapIds entry
         private int _bitmapId = -1;
         private byte[]? _bitmapData;
-        private IMapView? _mapView;
+        private IMapViewInternal? _mapView;
 
         public static readonly BindableProperty TypeProperty = BindableProperty.Create(nameof(Type), typeof(PinType), typeof(Pin), default(PinType));
         public static readonly BindableProperty PositionProperty = BindableProperty.Create(nameof(Position), typeof(Position), typeof(Pin), default(Position));
@@ -59,7 +59,7 @@ namespace Mapsui.UI.Objects
         /// <param name="mapView">MapView to which this pin belongs</param>
         public Pin(IMapView mapView)
         {
-            _mapView = mapView;
+            _mapView = (IMapViewInternal)mapView;
 
             CreateFeature();
         }
@@ -88,7 +88,7 @@ namespace Mapsui.UI.Objects
 
                     Feature?.Dispose();
                     Feature = null;
-                    _mapView = value;
+                    _mapView = (IMapViewInternal)value;
 
                     CreateFeature();
                 }

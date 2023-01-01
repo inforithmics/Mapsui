@@ -33,7 +33,7 @@ namespace Mapsui.UI.Wpf
 #endif
         public static readonly BindableProperty UniqueCalloutProperty = BindableHelper.Create(nameof(UniqueCallout), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
 
-        private readonly ObservableRangeCollection<ICallout> _callouts = new();
+        private readonly ObservableRangeCollection<Callout> _callouts = new();
         
         /// <summary>
         /// Single or multiple callouts possible
@@ -52,7 +52,7 @@ namespace Mapsui.UI.Wpf
             _callouts.Clear();
         }
         
-        void IMapViewInternal.AddCallout(ICallout callout)
+        void IMapViewInternal.AddCallout(Callout callout)
         {
             if (!_callouts.Contains(callout))
             {
@@ -65,7 +65,7 @@ namespace Mapsui.UI.Wpf
             }
         }
 
-        void IMapViewInternal.RemoveCallout(ICallout? callout)
+        void IMapViewInternal.RemoveCallout(Callout? callout)
         {
             if (callout != null && _callouts.Contains(callout))
             {
@@ -75,7 +75,7 @@ namespace Mapsui.UI.Wpf
             }
         }
 
-        bool IMapViewInternal.IsCalloutVisible(ICallout callout)
+        bool IMapViewInternal.IsCalloutVisible(Callout callout)
         {
             return _callouts.Contains(callout);
         }

@@ -11,5 +11,5 @@ public class BindableProperty
         public BindableProperty(string name, Type ownerType, StyledPropertyMetadata<object> metadata, bool inherits = false, Func<object, bool>? validate = null) : base(name, ownerType, metadata, inherits, validate) { }
 #endif
     }
-#endif
 }
+#endif
