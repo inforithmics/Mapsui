@@ -22,7 +22,6 @@
     <Compile Include="..\Mapsui.UI.Forms\MapView.cs" Link="MapView.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Circle.cs" Link="Objects\Circle.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\MyLocationLayer.cs" Link="Objects\MyLocationLayer.cs" />
-    <Compile Include="..\Mapsui.UI.Forms\Objects\Pin.cs" Link="Objects\Pin.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Polygon.cs" Link="Objects\Polygon.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Objects\Polyline.cs" Link="Objects\Polyline.cs" />
     <Compile Include="..\Mapsui.UI.Forms\Utils\PolylineConverter.cs" Link="Utils\PolylineConverter.cs" />

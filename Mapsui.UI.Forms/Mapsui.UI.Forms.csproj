@@ -53,6 +53,11 @@
     <EmbeddedResource Include="Images\MyLocationDir.svg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EventArgs" />
+    <Folder Include="Utils" />
+  </ItemGroup>
+
   <Import Project="..\Mapsui.UI.Shared\Mapsui.UI.Shared.projitems" Label="Shared" />
 
 </Project>

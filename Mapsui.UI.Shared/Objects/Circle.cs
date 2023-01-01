@@ -8,20 +8,6 @@ using Mapsui.UI.Extensions;
 using Mapsui.UI.Objects;
 using NetTopologySuite.Geometries;
 
-#if __MAUI__
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Mapsui.UI.Maui;
-
-using Color = Microsoft.Maui.Graphics.Color;
-using KnownColor = Mapsui.UI.Maui.KnownColor;
-#else
-using Xamarin.Forms;
-
-using Color = Xamarin.Forms.Color;
-using KnownColor = Xamarin.Forms.Color;
-#endif
-
 namespace Mapsui.UI.Objects
 {
     public class Circle : Drawable

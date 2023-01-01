@@ -14,6 +14,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\CalloutClickedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\DrawableEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\HoveredEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgs\PinClickedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgs\SelectedPinChangedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\SwipedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TappedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs\TouchedEventArgs.cs" />
@@ -25,10 +27,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)MapControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\Callout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\Circle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\Drawable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\IClickable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\IDrawable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\Pin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\Polygon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\Polyline.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableProperty.cs" />

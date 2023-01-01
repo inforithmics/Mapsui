@@ -12,20 +12,6 @@ using Mapsui.Nts.Extensions;
 using Mapsui.UI.Extensions;
 using Position = Mapsui.UI.Objects.Position;
 
-#if __MAUI__
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-
-using Color = Microsoft.Maui.Graphics.Color;
-using KnownColor = Mapsui.UI.Maui.KnownColor;
-#else
-using Xamarin.Forms;
-
-using Color = Xamarin.Forms.Color;
-using KnownColor = Xamarin.Forms.Color;
-#endif
-
-
 namespace Mapsui.UI.Objects
 {
     public class Polygon : Drawable
