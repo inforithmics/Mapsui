@@ -6,16 +6,17 @@ using Mapsui.Nts;
 using Mapsui.Styles;
 using Mapsui.UI.Extensions;
 using Mapsui.UI.Objects;
+using Mapsui.UI.Utils;
 using NetTopologySuite.Geometries;
 
 namespace Mapsui.UI.Objects
 {
     public class Circle : Drawable
     {
-        public static readonly BindableProperty CenterProperty = BindableProperty.Create(nameof(Center), typeof(Position), typeof(Circle), default(Position));
-        public static readonly BindableProperty RadiusProperty = BindableProperty.Create(nameof(Radius), typeof(Distance), typeof(Circle), Distance.FromMeters(1));
-        public static readonly BindableProperty QualityProperty = BindableProperty.Create(nameof(Quality), typeof(double), typeof(Circle), 3.0);
-        public static readonly BindableProperty FillColorProperty = BindableProperty.Create(nameof(FillColor), typeof(Color), typeof(Circle), KnownColor.DarkGray);
+        public static readonly BindableProperty CenterProperty = BindableHelper.Create(nameof(Center), typeof(Position), typeof(Circle), default(Position));
+        public static readonly BindableProperty RadiusProperty = BindableHelper.Create(nameof(Radius), typeof(Distance), typeof(Circle), Distance.FromMeters(1));
+        public static readonly BindableProperty QualityProperty = BindableHelper.Create(nameof(Quality), typeof(double), typeof(Circle), 3.0);
+        public static readonly BindableProperty FillColorProperty = BindableHelper.Create(nameof(FillColor), typeof(Color), typeof(Circle), KnownColor.DarkGray);
 
         public Circle()
         {
@@ -29,8 +30,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Position Center
         {
-            get => (Position)GetValue(CenterProperty);
-            set => SetValue(CenterProperty, value);
+            get => (Position)this.GetValue(CenterProperty);
+            set => this.SetValue(CenterProperty, value);
         }
 
         /// <summary>
@@ -38,8 +39,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Distance Radius
         {
-            get => (Distance)GetValue(RadiusProperty);
-            set => SetValue(RadiusProperty, value);
+            get => (Distance)this.GetValue(RadiusProperty);
+            set => this.SetValue(RadiusProperty, value);
         }
 
         /// <summary>
@@ -47,8 +48,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color FillColor
         {
-            get => (Color)GetValue(FillColorProperty);
-            set => SetValue(FillColorProperty, value);
+            get => (Color)this.GetValue(FillColorProperty);
+            set => this.SetValue(FillColorProperty, value);
         }
 
         /// <summary>
@@ -56,8 +57,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double Quality
         {
-            get => (double)GetValue(QualityProperty);
-            set => SetValue(QualityProperty, value);
+            get => (double)this.GetValue(QualityProperty);
+            set => this.SetValue(QualityProperty, value);
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string? propertyName = null)

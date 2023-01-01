@@ -10,13 +10,14 @@ using Mapsui.Nts;
 using NetTopologySuite.Geometries;
 using Mapsui.Nts.Extensions;
 using Mapsui.UI.Extensions;
+using Mapsui.UI.Utils;
 using Position = Mapsui.UI.Objects.Position;
 
 namespace Mapsui.UI.Objects
 {
     public class Polygon : Drawable
     {
-        public static readonly BindableProperty FillColorProperty = BindableProperty.Create(nameof(FillColor), typeof(Color), typeof(Polygon), KnownColor.DarkGray);
+        public static readonly BindableProperty FillColorProperty = BindableHelper.Create(nameof(FillColor), typeof(Color), typeof(Polygon), KnownColor.DarkGray);
         private readonly ObservableRangeCollection<Position> _positions = new ObservableRangeCollection<Position>();
         private readonly ObservableRangeCollection<Position[]> _holes = new ObservableRangeCollection<Position[]>();
 
@@ -36,8 +37,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color FillColor
         {
-            get { return (Color)GetValue(FillColorProperty); }
-            set { SetValue(FillColorProperty, value); }
+            get { return (Color)this.GetValue(FillColorProperty); }
+            set { this.SetValue(FillColorProperty, value); }
         }
 
         /// <summary>
