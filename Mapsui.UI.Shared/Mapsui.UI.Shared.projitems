@@ -42,6 +42,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindableProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\BindingMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlingTracker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\KnownColor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\PCLTimer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Close.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\LocationCenter.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\LocationNoCenter.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\MyLocationDir.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\MyLocationMoving.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\MyLocationStill.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Pin.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\RotationZero.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\ZoomIn.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\ZoomOut.svg" />
   </ItemGroup>
 </Project>

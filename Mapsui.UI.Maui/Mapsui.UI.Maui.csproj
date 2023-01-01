@@ -30,25 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EventArgs" />
-    <Folder Include="Extensions" />
-    <Folder Include="Extensions\" />
-    <Folder Include="EventArgs\" />
-    <Folder Include="Images\" />
     <Folder Include="Objects\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\Close.svg" Link="Images\Close.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\LocationCenter.svg" Link="Images\LocationCenter.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\LocationNoCenter.svg" Link="Images\LocationNoCenter.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\MyLocationDir.svg" Link="Images\MyLocationDir.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\MyLocationMoving.svg" Link="Images\MyLocationMoving.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\MyLocationStill.svg" Link="Images\MyLocationStill.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\Pin.svg" Link="Images\Pin.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\RotationZero.svg" Link="Images\RotationZero.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\ZoomIn.svg" Link="Images\ZoomIn.svg" />
-    <EmbeddedResource Include="..\Mapsui.UI.Forms\Images\ZoomOut.svg" Link="Images\ZoomOut.svg" />
   </ItemGroup>
 
   <Import Project="..\Mapsui.UI.Shared\Mapsui.UI.Shared.projitems" Label="Shared" />
