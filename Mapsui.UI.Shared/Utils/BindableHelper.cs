@@ -8,7 +8,7 @@ namespace Mapsui.UI.Utils
             string name, 
             Type returnType, 
             Type declaringType, 
-            object defaultValue, 
+            object defaultValue = null, 
             BindingMode defaultBindingMode = BindingMode.OneWay)
         {
 #if __AVALONIA__

@@ -33,6 +33,7 @@ global using Xamarin.Forms;
 
 global using Color = Xamarin.Forms.Color;
 global using KnownColor = Xamarin.Forms.Color;
+global using Point = Xamarin.Forms.Point;
 #elif __ANDROID__
 global using Mapsui.UI.Utils;
 

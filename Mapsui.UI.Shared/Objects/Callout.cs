@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Windows.UI.Xaml.Interop;
-using Android.Bluetooth;
 using Mapsui.Extensions;
 using Mapsui.Nts;
 using Mapsui.Styles;
@@ -13,7 +11,6 @@ using Mapsui.UI.Objects;
 using Mapsui.UI.Utils;
 using NetTopologySuite.GeometriesGraph;
 using CalloutStyle = Mapsui.Styles.CalloutStyle;
-using Color = Mapsui.Styles.Color;
 
 namespace Mapsui.UI.Objects
 {
@@ -27,11 +24,11 @@ namespace Mapsui.UI.Objects
 
         public event EventHandler<CalloutClickedEventArgs>? CalloutClicked;
 
-        public static double DefaultTitleFontSize = BluetoothClass.Device.GetNamedSize(NamedSize.Title, typeof(Label));
+        public static double DefaultTitleFontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label));
         public static FontAttributes DefaultTitleFontAttributes = FontAttributes.Bold;
         public static TextAlignment DefaultTitleTextAlignment = TextAlignment.Center;
         public static Color DefaultTitleFontColor = KnownColor.Black;
-        public static double DefaultSubtitleFontSize = BluetoothClass.Device.GetNamedSize(NamedSize.Subtitle, typeof(Label));
+        public static double DefaultSubtitleFontSize = Device.GetNamedSize(NamedSize.Subtitle, typeof(Label));
         public static FontAttributes DefaultSubtitleFontAttributes = FontAttributes.None;
         public static Color DefaultSubtitleFontColor = KnownColor.Black;
         public static TextAlignment DefaultSubtitleTextAlignment = TextAlignment.Start; // Center;
