@@ -30,8 +30,8 @@ global using KnownColor = Mapsui.UI.Maui.KnownColor;
 #elif __FORMS__
 global using Xamarin.Forms;
 
-using Color = Xamarin.Forms.Color;
-using KnownColor = Xamarin.Forms.Color;
+global using Color = Xamarin.Forms.Color;
+global using KnownColor = Xamarin.Forms.Color;
 #elif __ANDROID__
 global using Mapsui.UI.Utils;
 
@@ -42,4 +42,7 @@ global using Mapsui.UI.Utils;
 global using Point = System.Drawing.Point;
 #elif __ETO_FORMS__
 global using Mapsui.UI.Utils;
+
+global using Color = System.Drawing.Color;
+global using KnownColor = System.Drawing.Color;
 #endif

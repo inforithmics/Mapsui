@@ -9,17 +9,6 @@ using Mapsui.UI.Extensions;
 using Mapsui.UI.Objects;
 using Mapsui.UI.Utils;
 
-#if __MAUI__
-using Mapsui.UI.Maui;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-
-using Color = Microsoft.Maui.Graphics.Color;
-using KnownColor = Mapsui.UI.Maui.KnownColor;
-#else
-using Color = Xamarin.Forms.Color;
-#endif
-
 namespace Mapsui.UI.Objects
 {
     /// <summary>
@@ -44,8 +33,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public string Label
         {
-            get => (string)GetValue(LabelProperty);
-            set => SetValue(LabelProperty, value);
+            get => (string)this.GetValue(LabelProperty);
+            set => this.SetValue(LabelProperty, value);
         }
 
         /// <summary>
@@ -53,8 +42,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public float StrokeWidth
         {
-            get => (float)GetValue(StrokeWidthProperty);
-            set => SetValue(StrokeWidthProperty, value);
+            get => (float)this.GetValue(StrokeWidthProperty);
+            set => this.SetValue(StrokeWidthProperty, value);
         }
 
         /// <summary>
@@ -62,8 +51,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color StrokeColor
         {
-            get { return (Color)GetValue(StrokeColorProperty); }
-            set { SetValue(StrokeColorProperty, value); }
+            get { return (Color)this.GetValue(StrokeColorProperty); }
+            set { this.SetValue(StrokeColorProperty, value); }
         }
 
         /// <summary>
@@ -71,8 +60,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double MinVisible
         {
-            get => (double)GetValue(MinVisibleProperty);
-            set => SetValue(MinVisibleProperty, value);
+            get => (double)this.GetValue(MinVisibleProperty);
+            set => this.SetValue(MinVisibleProperty, value);
         }
 
         /// <summary>
@@ -80,8 +69,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double MaxVisible
         {
-            get => (double)GetValue(MaxVisibleProperty);
-            set => SetValue(MaxVisibleProperty, value);
+            get => (double)this.GetValue(MaxVisibleProperty);
+            set => this.SetValue(MaxVisibleProperty, value);
         }
 
         /// <summary>
@@ -89,8 +78,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public int ZIndex
         {
-            get => (int)GetValue(ZIndexProperty);
-            set => SetValue(ZIndexProperty, value);
+            get => (int)this.GetValue(ZIndexProperty);
+            set => this.SetValue(ZIndexProperty, value);
         }
 
         /// <summary>
@@ -98,8 +87,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public bool IsClickable
         {
-            get => (bool)GetValue(IsClickableProperty);
-            set => SetValue(IsClickableProperty, value);
+            get => (bool)this.GetValue(IsClickableProperty);
+            set => this.SetValue(IsClickableProperty, value);
         }
 
         /// <summary>
