@@ -18,7 +18,6 @@ using Microsoft.Maui.Graphics;
 using SkiaSharp.Views.Maui;
 using SkiaSharp.Views.Maui.Controls;
 
-using Color = Microsoft.Maui.Graphics.Color;
 using Logger = Mapsui.Logging.Logger;
 #else
 using SkiaSharp.Views.Forms;

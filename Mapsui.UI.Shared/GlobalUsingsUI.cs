@@ -27,7 +27,9 @@ global using Microsoft.Maui.Controls;
 
 global using Point = Microsoft.Maui.Graphics.Point;
 global using Color = Microsoft.Maui.Graphics.Color;
-global using KnownColor = Mapsui.UI.Maui.KnownColor;
+global using KnownColor = Mapsui.UI.Utils.KnownColor;
+global using TextAlignment = Microsoft.Maui.TextAlignment;
+global using Thickness = Microsoft.Maui.Thickness;
 #elif __FORMS__
 global using Xamarin.Forms;
 

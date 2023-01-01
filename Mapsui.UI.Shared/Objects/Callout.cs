@@ -12,6 +12,12 @@ using Mapsui.UI.Utils;
 using NetTopologySuite.GeometriesGraph;
 using CalloutStyle = Mapsui.Styles.CalloutStyle;
 
+#if __FORMS__
+using Label = Xamarin.Forms.Label;
+#elif  __MAUI__
+using Label = Microsoft.Maui.Controls.Label;
+#endif
+
 namespace Mapsui.UI.Objects
 {
     public class Callout : BindableObject, IFeatureProvider, IDisposable, ICallout, IPropertiesInternal
@@ -23,12 +29,17 @@ namespace Mapsui.UI.Objects
         private readonly Pin _pin;
 
         public event EventHandler<CalloutClickedEventArgs>? CalloutClicked;
-
+#if __FORMS__ || __MAUI__
         public static double DefaultTitleFontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label));
+        public static double DefaultSubtitleFontSize = Device.GetNamedSize(NamedSize.Subtitle, typeof(Label));
+#else
+        public static double? DefaultTitleFontSize = null;
+        public static double? DefaultSubtitleFontSize = null;
+#endif  
+        
         public static FontAttributes DefaultTitleFontAttributes = FontAttributes.Bold;
         public static TextAlignment DefaultTitleTextAlignment = TextAlignment.Center;
         public static Color DefaultTitleFontColor = KnownColor.Black;
-        public static double DefaultSubtitleFontSize = Device.GetNamedSize(NamedSize.Subtitle, typeof(Label));
         public static FontAttributes DefaultSubtitleFontAttributes = FontAttributes.None;
         public static Color DefaultSubtitleFontColor = KnownColor.Black;
         public static TextAlignment DefaultSubtitleTextAlignment = TextAlignment.Start; // Center;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Mapsui.UI.Extensions;
 
-namespace Mapsui.UI
+namespace Mapsui.UI.Utils
 {
 #if __MAUI__    
     /// <summary> Known Color Helper for Maui </summary>
