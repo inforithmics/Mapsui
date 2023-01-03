@@ -2,7 +2,7 @@
 
 namespace Mapsui.UI
 {
-    internal interface IMapViewInternal : IMapView , IPropertiesInternal
+    internal interface IMapViewInternal : IMapView
     {
         void RemoveCallout(Callout callout);
         void AddCallout(Callout callout);

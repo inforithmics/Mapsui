@@ -1,4 +1,6 @@
 ﻿
+using SkiaSharp;
+
 namespace Mapsui.UI.Extensions
 {
     public static class ColorExtensions
@@ -18,7 +20,7 @@ namespace Mapsui.UI.Extensions
         {
             return new Microsoft.Maui.Graphics.Color(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
         }
-#else
+#elif __FORMS__
         /// <summary>
         /// Convert Mapsui.Styles.Color to Xamarin.Forms.Color
         /// </summary>
@@ -45,7 +47,7 @@ namespace Mapsui.UI.Extensions
         {
             return new Styles.Color((int)(color.Red * 255), (int)(color.Green * 255), (int)(color.Blue * 255), (int)(color.Alpha * 255));
         }
-#else
+#elif  __FORMS__
         /// <summary>
         /// Convert Xamarin.Forms.Color to Mapsui.Style.Color
         /// </summary>
@@ -56,5 +58,12 @@ namespace Mapsui.UI.Extensions
             return new Styles.Color((int)(color.R * 255), (int)(color.G * 255), (int)(color.B * 255), (int)(color.A * 255));
         }
 #endif
+
+#if __AVALONIA__ || __ETO_FORMS__        
+        public static SKColor ToSkColor(Color color)
+        {
+            return new SKColor(color.R, color.G, color.B, color.A);
+        }
+#endif        
     }
 }

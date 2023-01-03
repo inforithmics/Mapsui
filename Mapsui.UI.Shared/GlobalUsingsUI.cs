@@ -1,9 +1,12 @@
 ﻿#if __AVALONIA__
 global using Avalonia;
 global using Avalonia.Interactivity;
+global using Avalonia.Skia;
 
 global using BindableObject = Avalonia.AvaloniaObject;
 global using BindingMode = Avalonia.Data.BindingMode;
+global using Color = System.Drawing.Color;
+global using KnownColor = System.Drawing.Color;
 #elif __WINUI__
 global using Microsoft.UI.Xaml;
 global using SkiaSharp.Views.Windows;
