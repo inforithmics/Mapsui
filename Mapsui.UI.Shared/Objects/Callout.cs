@@ -29,8 +29,8 @@ namespace Mapsui.UI.Objects
         public static double DefaultTitleFontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label));
         public static double DefaultSubtitleFontSize = Device.GetNamedSize(NamedSize.Subtitle, typeof(Label));
 #else
-        public static double? DefaultTitleFontSize = null;
-        public static double? DefaultSubtitleFontSize = null;
+        public static double? DefaultTitleFontSize = null; // TODO: default font size per platform
+        public static double? DefaultSubtitleFontSize = null; // TODO: default font size per platform
 #endif  
         
         public static FontAttributes DefaultTitleFontAttributes = FontAttributes.Bold;

@@ -15,7 +15,6 @@ using Mapsui.Utilities;
 using SkiaSharp.Views.Desktop;
 using SkiaSharp.Views.WPF;
 using HorizontalAlignment = System.Windows.HorizontalAlignment;
-using Point = System.Windows.Point;
 using VerticalAlignment = System.Windows.VerticalAlignment;
 using XamlVector = System.Windows.Vector;
 

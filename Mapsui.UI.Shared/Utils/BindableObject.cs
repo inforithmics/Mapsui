@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 namespace Mapsui.UI.Utils
 {
 #if __UWP__
-    public class BindableObject : Windows.UI.Xaml.DependencyObject,INotifyPropertyChanged
+    public class BindableObject : Windows.UI.Xaml.DependencyObject, INotifyPropertyChanged
 #elif __WPF__
     public class BindableObject : System.Windows.DependencyObject, INotifyPropertyChanged
 #elif __WINUI__
@@ -50,6 +50,27 @@ namespace Mapsui.UI.Utils
                 _properties[property] = value;
                 OnPropertyChanged(propertyName);
             }
+        }
+#else
+        public void SetValue(BindableProperty property, object value, [CallerMemberName] string? propertyName = null)
+        {
+            if (this.GetValue(property) != value)
+            {
+                base.SetValue(property, value); 
+                OnPropertyChanged(propertyName);
+            }
+        }
+#endif
+
+#if __WPF__
+        public new virtual bool Equals(object? obj)
+        {
+           return base.Equals(obj);
+        }
+
+        public new virtual int GetHashCode()
+        {
+            return base.GetHashCode();
         }
 #endif
     }

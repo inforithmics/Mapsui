@@ -28,6 +28,9 @@ global using SkiaSharp.Views.WPF;
 global using BindableProperty = System.Windows.DependencyProperty;
 global using Point = System.Windows.Point;
 global using BindingMode = System.Windows.Data.BindingMode;
+global using Color = System.Windows.Media.Color;
+global using KnownColor = System.Windows.Media.Color;
+global using FontAttributes = System.Windows.FontWeight;
 #elif __MAUI__
 global using Microsoft.Maui.Controls;
 global using SkiaSharp.Views.Maui;
