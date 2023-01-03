@@ -37,8 +37,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color FillColor
         {
-            get { return (Color)this.GetValue(FillColorProperty); }
-            set { this.SetValue(FillColorProperty, value); }
+            get { return (Color)GetValue(FillColorProperty); }
+            set { SetValue(FillColorProperty, value); }
         }
 
         /// <summary>

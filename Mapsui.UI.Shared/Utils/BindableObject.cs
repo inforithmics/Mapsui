@@ -17,6 +17,10 @@ namespace Mapsui.UI.Utils
     public class BindableObject : INotifyPropertyChanged
 #endif    
     {
+#if  __ANDROID__ || __IOS__ || __ETO_FORMS__
+        private readonly Dictionary<object, object> _properties = new();
+#endif
+        
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
@@ -31,6 +35,23 @@ namespace Mapsui.UI.Utils
             OnPropertyChanged(propertyName);
             return true;
         }
+        
+#if  __ANDROID__ || __IOS__ || __ETO_FORMS__        
+        public object GetValue(object property)
+        {
+            _properties.TryGetValue(property, out var result);
+            return result;
+        }
+
+        public void SetValue(object property, object value, [CallerMemberName] string? propertyName = null)
+        {
+            if (_properties[property] != value)
+            {
+                _properties[property] = value;
+                OnPropertyChanged(propertyName);
+            }
+        }
+#endif
     }
 }
 #endif

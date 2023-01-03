@@ -14,12 +14,8 @@ namespace Mapsui.UI.Objects
     /// <summary>
     /// Base class for all drawables like polyline, polygon and circle
     /// </summary>
-    public class Drawable : BindableObject, IClickable, IFeatureProvider, IDrawable, IPropertiesInternal
+    public class Drawable : BindableObject, IClickable, IFeatureProvider, IDrawable
     {
-#if __ANDROID__ || __IOS__ || __ETO_FORMS__
-        Dictionary<object,object> IPropertiesInternal.Properties { get; } = new();
-#endif
-        
         public static readonly BindableProperty LabelProperty = BindableHelper.Create(nameof(Label), typeof(string), typeof(Drawable), default(string));
         public static readonly BindableProperty StrokeWidthProperty = BindableHelper.Create(nameof(StrokeWidth), typeof(float), typeof(Drawable), 1f);
         public static readonly BindableProperty MinVisibleProperty = BindableHelper.Create(nameof(MinVisible), typeof(double), typeof(Drawable), 0.0);
@@ -33,8 +29,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public string Label
         {
-            get => (string)this.GetValue(LabelProperty);
-            set => this.SetValue(LabelProperty, value);
+            get => (string)GetValue(LabelProperty);
+            set => SetValue(LabelProperty, value);
         }
 
         /// <summary>
@@ -42,8 +38,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public float StrokeWidth
         {
-            get => (float)this.GetValue(StrokeWidthProperty);
-            set => this.SetValue(StrokeWidthProperty, value);
+            get => (float)GetValue(StrokeWidthProperty);
+            set => SetValue(StrokeWidthProperty, value);
         }
 
         /// <summary>
@@ -51,8 +47,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color StrokeColor
         {
-            get { return (Color)this.GetValue(StrokeColorProperty); }
-            set { this.SetValue(StrokeColorProperty, value); }
+            get { return (Color)GetValue(StrokeColorProperty); }
+            set { SetValue(StrokeColorProperty, value); }
         }
 
         /// <summary>
@@ -60,8 +56,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double MinVisible
         {
-            get => (double)this.GetValue(MinVisibleProperty);
-            set => this.SetValue(MinVisibleProperty, value);
+            get => (double)GetValue(MinVisibleProperty);
+            set => SetValue(MinVisibleProperty, value);
         }
 
         /// <summary>
@@ -69,8 +65,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double MaxVisible
         {
-            get => (double)this.GetValue(MaxVisibleProperty);
-            set => this.SetValue(MaxVisibleProperty, value);
+            get => (double)GetValue(MaxVisibleProperty);
+            set => SetValue(MaxVisibleProperty, value);
         }
 
         /// <summary>
@@ -78,8 +74,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public int ZIndex
         {
-            get => (int)this.GetValue(ZIndexProperty);
-            set => this.SetValue(ZIndexProperty, value);
+            get => (int)GetValue(ZIndexProperty);
+            set => SetValue(ZIndexProperty, value);
         }
 
         /// <summary>
@@ -87,8 +83,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public bool IsClickable
         {
-            get => (bool)this.GetValue(IsClickableProperty);
-            set => this.SetValue(IsClickableProperty, value);
+            get => (bool)GetValue(IsClickableProperty);
+            set => SetValue(IsClickableProperty, value);
         }
 
         /// <summary>

@@ -30,8 +30,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Position Center
         {
-            get => (Position)this.GetValue(CenterProperty);
-            set => this.SetValue(CenterProperty, value);
+            get => (Position)GetValue(CenterProperty);
+            set => SetValue(CenterProperty, value);
         }
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Distance Radius
         {
-            get => (Distance)this.GetValue(RadiusProperty);
-            set => this.SetValue(RadiusProperty, value);
+            get => (Distance)GetValue(RadiusProperty);
+            set => SetValue(RadiusProperty, value);
         }
 
         /// <summary>
@@ -48,8 +48,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public Color FillColor
         {
-            get => (Color)this.GetValue(FillColorProperty);
-            set => this.SetValue(FillColorProperty, value);
+            get => (Color)GetValue(FillColorProperty);
+            set => SetValue(FillColorProperty, value);
         }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace Mapsui.UI.Objects
         /// </summary>
         public double Quality
         {
-            get => (double)this.GetValue(QualityProperty);
-            set => this.SetValue(QualityProperty, value);
+            get => (double)GetValue(QualityProperty);
+            set => SetValue(QualityProperty, value);
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string? propertyName = null)

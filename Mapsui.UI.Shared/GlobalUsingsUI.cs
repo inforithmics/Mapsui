@@ -1,27 +1,27 @@
 ﻿#if __AVALONIA__
 global using Avalonia;
-global using Avalonia.Data;
 global using Avalonia.Interactivity;
 
 global using BindableObject = Avalonia.AvaloniaObject;
+global using BindingMode = Avalonia.Data.BindingMode;
 #elif __WINUI__
 global using Microsoft.UI.Xaml;
-global using Microsoft.UI.Xaml.Data;
 
 global using BindableProperty = Microsoft.UI.Xaml.DependencyProperty;
 global using Point = Windows.Foundation.Point;
+global using BindingMode = Microsoft.UI.Xaml.Data.BindingMode;
 #elif __UWP__
 global using Windows.UI.Xaml;
-global using Windows.UI.Xaml.Data;
 
 global using BindableProperty = Windows.UI.Xaml.DependencyProperty;
 global using Point = Windows.Foundation.Point;
+global using BindingMode = Windows.UI.Xaml.Data.BindingMode;
 #elif __WPF__
 global using System.Windows;
-global using System.Windows.Data;
 
 global using BindableProperty = System.Windows.DependencyProperty;
 global using Point = System.Windows.Point;
+global using BindingMode = System.Windows.Data.BindingMode;
 #elif __MAUI__
 global using Microsoft.Maui.Controls;
 

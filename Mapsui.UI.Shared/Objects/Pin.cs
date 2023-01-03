@@ -11,12 +11,8 @@ using SkiaSharp;
 
 namespace Mapsui.UI.Objects
 {
-    public class Pin : BindableObject, IFeatureProvider, IDisposable, IPropertiesInternal
+    public class Pin : BindableObject, IFeatureProvider, IDisposable
     {
-#if __ANDROID__ || __IOS__ || __ETO_FORMS__
-        Dictionary<object,object> IPropertiesInternal.Properties { get; } = new();
-#endif
-        
         // Cache for used bitmaps
         private static readonly Dictionary<string, int> _bitmapIds = new Dictionary<string, int>();
 
