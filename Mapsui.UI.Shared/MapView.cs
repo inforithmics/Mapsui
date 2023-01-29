@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Mapsui.UI.Objects;
 using Mapsui.UI.Utils;
@@ -29,7 +30,7 @@ namespace Mapsui.UI.Wpf
     public partial class MapView : MapControl, IMapView, IMapViewInternal
     {
 #if __ANDROID__ || __IOS__ || __ETO_FORMS__
-        Dictionary<object,object> IPropertiesInternal.Properties { get; } = new();
+        private Dictionary<object,object> _properties { get; } = new();
 #endif
         public static readonly BindableProperty UniqueCalloutProperty = BindableHelper.Create(nameof(UniqueCallout), typeof(bool), typeof(MapView), false, defaultBindingMode: BindingMode.TwoWay);
 
@@ -43,6 +44,32 @@ namespace Mapsui.UI.Wpf
             get => (bool)GetValue(UniqueCalloutProperty);
             set => SetValue(UniqueCalloutProperty, value);
         }
+        
+#if  __ANDROID__ || __IOS__ || __ETO_FORMS__        
+        public object GetValue(object property)
+        {
+            _properties.TryGetValue(property, out var result);
+            return result;
+        }
+
+        public void SetValue(object property, object value, [CallerMemberName] string? propertyName = null)
+        {
+            if (_properties[property] != value)
+            {
+                _properties[property] = value;
+                OnPropertyChanged(propertyName);
+            }
+        }
+#else
+        public void SetValue(BindableProperty property, object value, [CallerMemberName] string? propertyName = null)
+        {
+            if (this.GetValue(property) != value)
+            {
+                base.SetValue(property, value); 
+                OnPropertyChanged(propertyName);
+            }
+        }
+#endif        
 
         /// <summary>
         /// Hide all visible callouts

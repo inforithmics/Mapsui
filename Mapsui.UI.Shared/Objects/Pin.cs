@@ -74,7 +74,7 @@ namespace Mapsui.UI.Objects
 
                     Feature?.Dispose();
                     Feature = null;
-                    _mapView = (IMapViewInternal)value;
+                    _mapView = (IMapViewInternal?)value;
 
                     CreateFeature();
                 }
