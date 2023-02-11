@@ -14,6 +14,7 @@ global using SkiaSharp.Views.Windows;
 global using BindableProperty = Microsoft.UI.Xaml.DependencyProperty;
 global using Point = Windows.Foundation.Point;
 global using BindingMode = Microsoft.UI.Xaml.Data.BindingMode;
+global using Color = System.Drawing.Color;
 #elif __UWP__
 global using Windows.UI.Xaml;
 global using SkiaSharp.Views.UWP;
@@ -21,6 +22,7 @@ global using SkiaSharp.Views.UWP;
 global using BindableProperty = Windows.UI.Xaml.DependencyProperty;
 global using Point = Windows.Foundation.Point;
 global using BindingMode = Windows.UI.Xaml.Data.BindingMode;
+global using Color = System.Drawing.Color;
 #elif __WPF__
 global using System.Windows;
 global using SkiaSharp.Views.WPF;
