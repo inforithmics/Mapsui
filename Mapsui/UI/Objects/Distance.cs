@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 
 namespace Mapsui.UI.Objects
-{
+
     /// <summary>
     /// Distance between to positions
     /// </summary>
@@ -148,4 +148,3 @@ namespace Mapsui.UI.Objects
             return !left.Equals(right);
         }
     }
-}

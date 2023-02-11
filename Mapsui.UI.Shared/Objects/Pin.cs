@@ -10,7 +10,7 @@ using Mapsui.Utilities;
 using SkiaSharp;
 
 namespace Mapsui.UI.Objects
-{
+
     public class Pin : BindableObject, IFeatureProvider, IDisposable
     {
         // Cache for used bitmaps
@@ -563,4 +563,3 @@ namespace Mapsui.UI.Objects
             Feature?.Dispose();
         }
     }
-}

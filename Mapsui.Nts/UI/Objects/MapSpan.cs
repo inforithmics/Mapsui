@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Mapsui.UI.Objects
-{
+
     /// <summary>
     /// MapSpan represents an area of the earth
     /// </summary>
@@ -222,4 +222,3 @@ namespace Mapsui.UI.Objects
             return latCircumference * longitudeDegrees / 360;
         }
     }
-}

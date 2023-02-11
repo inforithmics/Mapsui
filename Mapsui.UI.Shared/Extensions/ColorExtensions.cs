@@ -1,8 +1,9 @@
 ﻿
 using SkiaSharp;
+namespace Mapsui.UI.Forms.Extensions;
 
-namespace Mapsui.UI.Extensions
-{
+namespace Mapsui.UI.Extensions;
+
     public static class ColorExtensions
     {
 #if __MAUI__
@@ -66,4 +67,4 @@ namespace Mapsui.UI.Extensions
         }
 #endif        
     }
-}
+

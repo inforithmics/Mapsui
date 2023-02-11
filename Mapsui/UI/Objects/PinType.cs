@@ -1,5 +1,5 @@
 ﻿namespace Mapsui.UI.Objects
-{
+
     public enum PinType
     {
         /// <summary>
@@ -17,4 +17,3 @@
         /// </summary>
         Svg
     }
-}

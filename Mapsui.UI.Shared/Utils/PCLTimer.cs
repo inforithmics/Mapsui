@@ -10,15 +10,16 @@ using Mapsui.Extensions;
 /// </remark>
 #pragma warning restore 1587
 
-namespace Mapsui.UI
-{
+namespace Mapsui.UI;
+
     internal delegate void TimerCallback(object state);
 
     internal sealed class Timer : CancellationTokenSource, IDisposable
     {
         public Timer(TimerCallback callback, object state, int dueTime, int period)
         {
-            Task.Delay(dueTime, Token).ContinueWith(async (t, s) => {
+        Task.Delay(dueTime, Token).ContinueWith(async (t, s) =>
+        {
                 var tuple = (Tuple<TimerCallback, object>?)s;
 
                 while (true)
@@ -29,13 +30,13 @@ namespace Mapsui.UI
                     Catch.TaskRun(() => tuple?.Item1(tuple.Item2));
 #pragma warning restore CS4014 // Missing await #pragma directive
                     await Task.Delay(period);
-                } 
+                }
             }, 
             Tuple.Create(callback, state), CancellationToken.None,
-            TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.OnlyOnRanToCompletion,
-            TaskScheduler.Default);
+                TaskContinuationOptions.ExecuteSynchronously | TaskContinuationOptions.OnlyOnRanToCompletion,
+                TaskScheduler.Default);
         }
 
         public new void Dispose() { Cancel(); }
     }
-}
+

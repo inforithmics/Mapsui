@@ -37,7 +37,6 @@
     <ProjectReference Include="..\..\..\Mapsui\Mapsui.csproj" />
     <ProjectReference Include="..\..\..\Mapsui.UI.Uno.WinUI\Mapsui.UI.Uno.WinUI.csproj" />
     <ProjectReference Include="..\..\..\Tests\Mapsui.Tests.Common\Mapsui.Tests.Common.csproj" />
-    <ProjectReference Include="..\..\Mapsui.Samples.Common.Desktop\Mapsui.Samples.Common.Desktop.csproj" />
     <ProjectReference Include="..\..\Mapsui.Samples.Common\Mapsui.Samples.Common.csproj" />
     <ProjectReference Include="..\..\Mapsui.Samples.CustomWidget\Mapsui.Samples.CustomWidget.csproj" />
   </ItemGroup>
@@ -45,7 +44,6 @@
     <When Condition="'$(TargetFramework)'=='net6.0-android'">
       <ItemGroup>
         <PackageReference Include="Xamarin.Google.Android.Material" />
-        <PackageReference Include="Uno.UniversalImageLoader" />
       </ItemGroup>
       <ItemGroup>
         <AndroidEnvironment Include="Android/environment.conf" />
@@ -85,6 +83,6 @@
   <Import Project="..\Mapsui.Samples.Uno.WinUI.Shared\Mapsui.Samples.Uno.WinUI.Shared.projitems" Label="Shared" />
   <PropertyGroup>
     <!-- Workaround for Error NU1008 Projects that use central package version management should not define the version on the PackageReference ..-->
-    <PreBuildEvent>"$(MSBuildProjectDirectory)\..\..\..\.nuget\nuget" restore $(MSBuildProjectDirectory)\Mapsui.Samples.Uno.WinUI.Mobile.csproj</PreBuildEvent>
+    <!--<PreBuildEvent>"$(MSBuildProjectDirectory)\..\..\..\.nuget\nuget" restore $(MSBuildProjectDirectory)\Mapsui.Samples.Uno.WinUI.Mobile.csproj</PreBuildEvent>-->
   </PropertyGroup>
 </Project>

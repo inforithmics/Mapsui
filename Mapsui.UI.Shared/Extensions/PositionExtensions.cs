@@ -1,8 +1,8 @@
 ﻿using Mapsui.Projections;
 using Mapsui.UI.Objects;
 
-namespace Mapsui.UI.Extensions
-{
+namespace Mapsui.UI.Extensions;
+
     public static class PositionExtensions
     {
 #if __MAUI__
@@ -30,4 +30,4 @@ namespace Mapsui.UI.Extensions
             return new Position(result.lat, result.lon);
         }
     }
-}
+

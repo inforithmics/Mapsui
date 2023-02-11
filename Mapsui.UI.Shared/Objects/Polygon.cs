@@ -14,7 +14,7 @@ using Mapsui.UI.Utils;
 using Position = Mapsui.UI.Objects.Position;
 
 namespace Mapsui.UI.Objects
-{
+
     public class Polygon : Drawable
     {
         public static readonly BindableProperty FillColorProperty = BindableHelper.Create(nameof(FillColor), typeof(Color), typeof(Polygon), KnownColor.DarkGray);
@@ -116,4 +116,4 @@ namespace Mapsui.UI.Objects
             }
         }
     }
-}
+

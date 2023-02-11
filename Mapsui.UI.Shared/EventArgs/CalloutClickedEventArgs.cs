@@ -2,7 +2,7 @@
 using Mapsui.UI.Objects;
 
 namespace Mapsui.UI
-{
+
     public sealed class CalloutClickedEventArgs : EventArgs
     {
         /// <summary>
@@ -39,4 +39,3 @@ namespace Mapsui.UI
             NumOfTaps = numOfTaps;
         }
     }
-}

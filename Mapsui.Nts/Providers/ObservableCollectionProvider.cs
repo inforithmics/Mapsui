@@ -8,8 +8,8 @@ using ConcurrentCollections;
 using Mapsui.Layers;
 using Mapsui.Providers;
 
-namespace Mapsui.UI.Objects
-{
+namespace Mapsui.UI.Objects;
+
     public class ObservableCollectionProvider<T> : IProvider where T : IFeatureProvider
     {
         public ObservableCollection<T> Collection { get; }
@@ -106,4 +106,3 @@ namespace Mapsui.UI.Objects
             return extent;
         }
     }
-}

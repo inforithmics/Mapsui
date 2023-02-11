@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Mapsui.UI.Objects;
 
 namespace Mapsui.UI.Utils
-{
+
     /// <summary>
     /// Polyline helper class
     /// </summary>
@@ -67,4 +67,3 @@ namespace Mapsui.UI.Utils
             return poly;
         }
     }
-}

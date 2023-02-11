@@ -10,7 +10,7 @@ using Mapsui.UI.Utils;
 using NetTopologySuite.Geometries;
 
 namespace Mapsui.UI.Objects
-{
+
     public class Circle : Drawable
     {
         public static readonly BindableProperty CenterProperty = BindableHelper.Create(nameof(Center), typeof(Position), typeof(Circle), default(Position));
@@ -148,4 +148,4 @@ namespace Mapsui.UI.Objects
             Feature!.Geometry = new NetTopologySuite.Geometries.Polygon(new LinearRing(exteriorRing.ToArray()));
         }
     }
-}
+

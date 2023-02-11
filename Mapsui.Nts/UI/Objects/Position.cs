@@ -3,7 +3,7 @@ using Mapsui.Projections;
 using NetTopologySuite.Geometries;
 
 namespace Mapsui.UI.Objects
-{
+
     /// <summary>
     /// Structure holding latitude and longitude of a position in spherical coordinate system
     /// </summary>
@@ -211,4 +211,3 @@ namespace Mapsui.UI.Objects
             return !Equals(left, right);
         }
     }
-}

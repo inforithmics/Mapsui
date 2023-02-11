@@ -2,7 +2,7 @@
 using Mapsui.UI.Objects;
 
 namespace Mapsui.UI
-{
+
     public sealed class PinClickedEventArgs : EventArgs
     {
         /// <summary>
@@ -33,4 +33,3 @@ namespace Mapsui.UI
             NumOfTaps = numOfTaps;
         }
     }
-}

@@ -13,7 +13,7 @@ using Mapsui.UI.Utils;
 using Position = Mapsui.UI.Objects.Position;
 
 namespace Mapsui.UI.Objects
-{
+
     public class Polyline : Drawable
     {
         // Todo: Rename, Polyline indicates a MultiLineString but it is a single LineString.
@@ -106,4 +106,4 @@ namespace Mapsui.UI.Objects
                 positions.ForEach(o => Positions.Add(o));
         }
     }
-}
+

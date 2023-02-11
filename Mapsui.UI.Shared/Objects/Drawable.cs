@@ -9,8 +9,8 @@ using Mapsui.UI.Extensions;
 using Mapsui.UI.Objects;
 using Mapsui.UI.Utils;
 
-namespace Mapsui.UI.Objects
-{
+namespace Mapsui.UI.Objects;
+
     /// <summary>
     /// Base class for all drawables like polyline, polygon and circle
     /// </summary>
@@ -146,4 +146,4 @@ namespace Mapsui.UI.Objects
             }
         }
     }
-}
+

@@ -2,7 +2,7 @@
 using Mapsui.UI.Objects;
 
 namespace Mapsui.UI
-{
+
     public sealed class MapLongClickedEventArgs : EventArgs
     {
         /// <summary>
@@ -21,4 +21,3 @@ namespace Mapsui.UI
             Point = point;
         }
     }
-}

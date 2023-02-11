@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Mapsui.Extensions;
 using Mapsui.Nts;
 using Mapsui.Styles;
-using Mapsui.UI.Extensions;
 using Mapsui.UI.Objects;
 using Mapsui.UI.Utils;
 using NetTopologySuite.GeometriesGraph;
 using CalloutStyle = Mapsui.Styles.CalloutStyle;
 
-#if __FORMS__
-using Label = Xamarin.Forms.Label;
-#elif  __MAUI__
-using Label = Microsoft.Maui.Controls.Label;
 #endif
 
 namespace Mapsui.UI.Objects
-{
+
     public class Callout : BindableObject, IFeatureProvider, IDisposable, ICallout
     {
         private readonly Pin _pin;
@@ -32,7 +25,7 @@ namespace Mapsui.UI.Objects
         public static double? DefaultTitleFontSize = null; // TODO: default font size per platform
         public static double? DefaultSubtitleFontSize = null; // TODO: default font size per platform
 #endif  
-        
+
         public static FontAttributes DefaultTitleFontAttributes = FontAttributes.Bold;
         public static TextAlignment DefaultTitleTextAlignment = TextAlignment.Center;
         public static Color DefaultTitleFontColor = KnownColor.Black;
@@ -401,7 +394,7 @@ namespace Mapsui.UI.Objects
         public string TitleFontName
         {
             get => (string)GetValue(TitleFontNameProperty);
-            set =>this. SetValue(TitleFontNameProperty, value);
+            set => SetValue(TitleFontNameProperty, value);
         }
 
         /// <summary>
@@ -640,4 +633,4 @@ namespace Mapsui.UI.Objects
             Feature.Dispose();
         }
     }
-}
+

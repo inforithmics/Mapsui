@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Mapsui.UI.Extensions;
 
-namespace Mapsui.UI.Utils
-{
+namespace Mapsui.UI.Utils;
+
 #if __MAUI__    
     /// <summary> Known Color Helper for Maui </summary>
     public static class KnownColor
@@ -16,5 +16,6 @@ namespace Mapsui.UI.Utils
         public static Color Black => Mapsui.Styles.Color.Black.ToNative();
         public static Color DarkGray => Mapsui.Styles.Color.DarkGray.ToNative();
     }
-#endif
 }
+#endif
+

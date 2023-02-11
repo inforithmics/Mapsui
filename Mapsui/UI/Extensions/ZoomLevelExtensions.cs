@@ -1,5 +1,5 @@
 ﻿namespace Mapsui.UI.Extensions
-{
+
     public static class ZoomLevelExtensions
     {
         /// <summary>
@@ -15,4 +15,3 @@
             return 156543.03392 / System.Math.Pow(2, zoomLevel);
         }
     }
-}

@@ -2,7 +2,7 @@
 using Mapsui.UI.Objects;
 
 namespace Mapsui.UI
-{
+
     public sealed class SelectedPinChangedEventArgs : EventArgs
     {
         /// <summary>
@@ -15,4 +15,3 @@ namespace Mapsui.UI
             SelectedPin = selectedPin;
         }
     }
-}

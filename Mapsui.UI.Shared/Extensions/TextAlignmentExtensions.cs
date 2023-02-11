@@ -1,7 +1,7 @@
 ﻿using Mapsui.Widgets;
 
 namespace Mapsui.UI.Extensions
-{
+
     public static class TextAlignmentExtensions
     {
         /// <summary>
@@ -32,4 +32,4 @@ namespace Mapsui.UI.Extensions
             return result;
         }
     }
-}
+

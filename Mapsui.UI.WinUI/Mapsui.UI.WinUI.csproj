@@ -7,7 +7,13 @@
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
     <DefineConstants>__WINUI__</DefineConstants>
-  </PropertyGroup>
+    <PackageId>Mapsui.WinUI</PackageId>
+    <Description>WinUI map components based on the Mapsui library</Description>
+    <PackageTags>$(PackageTags) winui</PackageTags>
+		<IsPackable>true</IsPackable>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+  </PropertyGroup>	
 
 	<!-- Workaround for https://github.com/microsoft/WindowsAppSDK/issues/1217 -->
 	<Target Name="FixBinPlaceBootstrapDll" BeforeTargets="BinPlaceBootstrapDll">
@@ -24,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mapsui.Rendering.Skia\Mapsui.Rendering.Skia.csproj" />
+    <ProjectReference Include="..\Mapsui.Tiling\Mapsui.Tiling.csproj" />
     <ProjectReference Include="..\Mapsui\Mapsui.csproj" />
   </ItemGroup>
 

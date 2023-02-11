@@ -1,8 +1,8 @@
 ﻿using System;
 using Mapsui.UI.Objects;
-
 namespace Mapsui.UI
-{
+
+
     public sealed class MapClickedEventArgs : EventArgs
     {
         /// <summary>
@@ -27,4 +27,4 @@ namespace Mapsui.UI
             NumOfTaps = numOfTaps;
         }
     }
-}
+
