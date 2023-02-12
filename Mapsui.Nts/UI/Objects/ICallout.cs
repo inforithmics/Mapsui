@@ -1,8 +1,7 @@
 ﻿using System;
 
-namespace Mapsui.UI.Objects
+namespace Mapsui.UI.Objects;
+
+public interface ICallout : IFeatureProvider, IDisposable
 {
-    public interface ICallout : IFeatureProvider, IDisposable
-    {
-    }
 }

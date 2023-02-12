@@ -1,19 +1,19 @@
-﻿namespace Mapsui.UI.Objects
+﻿namespace Mapsui.UI.Objects;
 
-    public enum PinType
-    {
-        /// <summary>
-        /// Pin with image, which could change color
-        /// </summary>
-        Pin,
+public enum PinType
+{
+    /// <summary>
+    /// Pin with image, which could change color
+    /// </summary>
+    Pin,
 
-        /// <summary>
-        /// Pin as icon image
-        /// </summary>
-        Icon,
+    /// <summary>
+    /// Pin as icon image
+    /// </summary>
+    Icon,
 
-        /// <summary>
-        /// Pin as Svg image
-        /// </summary>
-        Svg
-    }
+    /// <summary>
+    /// Pin as Svg image
+    /// </summary>
+    Svg
+}

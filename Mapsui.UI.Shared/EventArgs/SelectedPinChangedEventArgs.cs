@@ -1,17 +1,17 @@
 ﻿using System;
 using Mapsui.UI.Objects;
 
-namespace Mapsui.UI
+namespace Mapsui.UI;
 
-    public sealed class SelectedPinChangedEventArgs : EventArgs
+public sealed class SelectedPinChangedEventArgs : EventArgs
+{
+    /// <summary>
+    /// Pin that was selected
+    /// </summary>
+    public Pin SelectedPin { get; }
+
+    internal SelectedPinChangedEventArgs(Pin selectedPin)
     {
-        /// <summary>
-        /// Pin that was selected
-        /// </summary>
-        public Pin SelectedPin { get; }
-
-        internal SelectedPinChangedEventArgs(Pin selectedPin)
-        {
-            SelectedPin = selectedPin;
-        }
+        SelectedPin = selectedPin;
     }
+}

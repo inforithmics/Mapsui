@@ -1,7 +1,6 @@
 ﻿#nullable enable
-namespace Mapsui.UI.Objects
+namespace Mapsui.UI.Objects;
+
+public interface IDrawable
 {
-    public interface IDrawable
-    {
-    }
 }
