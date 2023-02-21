@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Mapsui.Layers;
 using Mapsui.Logging;
 using Mapsui.Utilities;
+using Mapsui.Extensions;
 #if __MAUI__
 using Microsoft.Maui;
 using Microsoft.Maui.ApplicationModel;
@@ -153,7 +154,7 @@ public partial class MapControl : ContentView, IMapControl, IDisposable
             // Events
             _canvasView.Touch += OnTouch;
             _canvasView.PaintSurface += OnPaintSurface;
-            _invalidate = () => { RunOnUIThread(() => _canvasView.InvalidateSurface()); };
+            _invalidate = () => { RunOnUIThread(() => Catch.Exceptions(() => _canvasView.InvalidateSurface())); };
             view = _canvasView;
         }
 
