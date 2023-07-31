@@ -34,6 +34,15 @@ public class Color
     public int B { get; set; }
     public int A { get; set; }
 
+    public string ToHex()
+    {
+        var red = (uint)(R * 255);
+        var green = (uint)(G * 255);
+        var blue = (uint)(B * 255);
+        var alpha = (uint)(A * 255);
+        return $"#{alpha:X2}{red:X2}{green:X2}{blue:X2}";
+    }
+
     /// <summary>
     /// Known HTML color names and hex code for RGB color
     /// </summary>
