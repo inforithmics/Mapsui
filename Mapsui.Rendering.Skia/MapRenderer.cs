@@ -240,7 +240,12 @@ public class MapRenderer : IRenderer
                 {
                     if (layer is IAsyncDataFetcher asyncDataFetcher)
                     {
-                        asyncDataFetcher.RefreshData(new FetchInfo(viewport.ToSection()));
+                        var fetchInfo = new FetchInfo(viewport.ToSection());
+                        var features = layer.GetFeatures(fetchInfo.Extent, fetchInfo.Resolution);
+                        if (!features.Any())
+                        {
+                            asyncDataFetcher.RefreshData(fetchInfo);
+                        }
                     }
                 }
 
