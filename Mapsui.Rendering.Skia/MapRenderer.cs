@@ -244,6 +244,7 @@ public class MapRenderer : IRenderer
                         var features = layer.GetFeatures(fetchInfo.Extent, fetchInfo.Resolution);
                         if (!features.Any())
                         {
+                            // Workaround for Loading Data in the Layer when it is rendered by Rasterizing Tile Layer or not loaded Layer.
                             asyncDataFetcher.RefreshData(fetchInfo);
                         }
                     }
