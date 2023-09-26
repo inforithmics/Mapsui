@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Mapsui.Extensions;
+using Mapsui.Fetcher;
 using Mapsui.Layers;
 using Mapsui.Logging;
 using Mapsui.Nts.Widgets;
@@ -233,6 +234,15 @@ public class MapRenderer : IRenderer
                 using var pixmap = surface.PeekPixels();
                 var color = pixmap.GetPixelColor(intX, intY);
 
+                // load data
+                // TODO: use IFeatureInfo
+                foreach (var layer in mapInfoLayers)
+                {
+                    if (layer is IAsyncDataFetcher asyncDataFetcher)
+                    {
+                        asyncDataFetcher.RefreshData(new FetchInfo(viewport.ToSection()));
+                    }
+                }
 
                 VisibleFeatureIterator.IterateLayers(viewport, mapInfoLayers, 0, (v, layer, style, feature, opacity, iteration) =>
                 {
