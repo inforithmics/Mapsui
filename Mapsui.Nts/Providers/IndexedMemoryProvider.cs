@@ -45,16 +45,16 @@ public class IndexedMemoryProvider : IProvider
             lock (_lock)
             {
                 if (_index == null)
-                {
-                    var index = new STRtree<IFeature>(Math.Max(Features.Count, 1));
+                { 
+                    var index = new STRtree<IFeature>();
                     foreach (var feature in Features)
                     {
                         var envelope = feature.Extent?.ToEnvelope();
                         index.Insert(envelope, feature);
                     }
 
-                    _index = index;
                     _itemsIndexed = Features.Count;
+                    _index = index;
                 }
             }
         }
