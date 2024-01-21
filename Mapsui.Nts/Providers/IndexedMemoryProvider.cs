@@ -45,7 +45,7 @@ public class IndexedMemoryProvider : IProvider
             lock (_lock)
             {
                 if (_index == null)
-                { 
+                {
                     var index = new STRtree<IFeature>(Math.Max(Features.Count, 1));
                     foreach (var feature in Features)
                     {
