@@ -4231,15 +4231,15 @@ references:
   isSpec: "True"
   fullName: Mapsui.Extensions.FeatureExtensions.GetExtent
   nameWithType: FeatureExtensions.GetExtent
-- uid: Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable{Mapsui.IFeature},System.String,System.String,Mapsui.Projections.IProjection,System.Func{Mapsui.IFeature,Mapsui.IFeature})
-  name: Project(IEnumerable<IFeature>, String, String, IProjection, Func<IFeature, IFeature>)
-  href: api/Mapsui.Extensions.FeatureExtensions.html#Mapsui_Extensions_FeatureExtensions_Project_System_Collections_Generic_IEnumerable_Mapsui_IFeature__System_String_System_String_Mapsui_Projections_IProjection_System_Func_Mapsui_IFeature_Mapsui_IFeature__
-  commentId: M:Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable{Mapsui.IFeature},System.String,System.String,Mapsui.Projections.IProjection,System.Func{Mapsui.IFeature,Mapsui.IFeature})
-  name.vb: Project(IEnumerable(Of IFeature), String, String, IProjection, Func(Of IFeature, IFeature))
-  fullName: Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable<Mapsui.IFeature>, System.String, System.String, Mapsui.Projections.IProjection, System.Func<Mapsui.IFeature, Mapsui.IFeature>)
-  fullName.vb: Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable(Of Mapsui.IFeature), System.String, System.String, Mapsui.Projections.IProjection, System.Func(Of Mapsui.IFeature, Mapsui.IFeature))
-  nameWithType: FeatureExtensions.Project(IEnumerable<IFeature>, String, String, IProjection, Func<IFeature, IFeature>)
-  nameWithType.vb: FeatureExtensions.Project(IEnumerable(Of IFeature), String, String, IProjection, Func(Of IFeature, IFeature))
+- uid: Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable{Mapsui.IFeature},System.String,System.String,Mapsui.Projections.IProjection)
+  name: Project(IEnumerable<IFeature>, String, String, IProjection)
+  href: api/Mapsui.Extensions.FeatureExtensions.html#Mapsui_Extensions_FeatureExtensions_Project_System_Collections_Generic_IEnumerable_Mapsui_IFeature__System_String_System_String_Mapsui_Projections_IProjection_
+  commentId: M:Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable{Mapsui.IFeature},System.String,System.String,Mapsui.Projections.IProjection)
+  name.vb: Project(IEnumerable(Of IFeature), String, String, IProjection)
+  fullName: Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable<Mapsui.IFeature>, System.String, System.String, Mapsui.Projections.IProjection)
+  fullName.vb: Mapsui.Extensions.FeatureExtensions.Project(System.Collections.Generic.IEnumerable(Of Mapsui.IFeature), System.String, System.String, Mapsui.Projections.IProjection)
+  nameWithType: FeatureExtensions.Project(IEnumerable<IFeature>, String, String, IProjection)
+  nameWithType.vb: FeatureExtensions.Project(IEnumerable(Of IFeature), String, String, IProjection)
 - uid: Mapsui.Extensions.FeatureExtensions.Project*
   name: Project
   href: api/Mapsui.Extensions.FeatureExtensions.html#Mapsui_Extensions_FeatureExtensions_Project_
