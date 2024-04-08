@@ -4,20 +4,21 @@
 
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Documentation ">
-  
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  <meta property="docfx:rel" content="../">
-  
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -83,7 +84,7 @@
 <li>We use docfx to generate the documentation.</li>
 <li>There is a /docfx folder with a docfx project called Mapsui.</li>
 <li>This projects documenation folder contains all the md files used to generate the 'documentation' tab in the site. This is the source of those files, they should be edited there.</li>
-<li>In the docfx folder there is a script (build-site.cmd) that generates the documentation site (in /docfx/mapsui/_site) and copies it to the /docs folder.</li>
+<li>In the powershell script ./Scripts/BuildDocumentationWebSite.ps1 generates the documentation web site, which is generated in the /docfx/mapsui/_site folder, and copies it to the /docs folder.</li>
 <li>The Mapsui project on github is configured to automatically publish this docs folder to <a href="https://mapsui.github.io/Mapsui">https://mapsui.github.io/Mapsui</a></li>
 <li>A commit of an md file should trigger the build server. This should run the build-site.cmd. This should commit the generated site to the repo. It will when then show up on the website. We should have two separate build configurations one for the docs which ignores the project and one for the project which ignores the docs.</li>
 </ul>
@@ -97,6 +98,7 @@
 <li>We should iteratively improve the documentation. If questions are asked in the issues we should search for the answer in the documentation. Update the documentation when it is missing and answer the issue with a url to the documentation.</li>
 <li>Writing documentation is not only useful to inform the user but also as a sanity check for the developer. If what you have to tell becomes complicated and hard to grasp this could mean the software is not well designed. Writing documentation early should be used as a part of the software development process.</li>
 </ul>
+
 </article>
           </div>
 
@@ -105,12 +107,12 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/inforithmics/Mapsui/blob/main/docfx/documentation/documentation.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/inforithmics/Mapsui/blob/main/docfx/documentation/documentation.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -132,7 +134,7 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>
