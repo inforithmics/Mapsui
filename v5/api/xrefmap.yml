@@ -6205,24 +6205,6 @@ references:
   commentId: T:Mapsui.Fetcher.DataChangedEventArgs
   fullName: Mapsui.Fetcher.DataChangedEventArgs
   nameWithType: DataChangedEventArgs
-- uid: Mapsui.Fetcher.DataChangedEventArgs.#ctor
-  name: DataChangedEventArgs()
-  href: pages/Mapsui.Fetcher.DataChangedEventArgs.html#Mapsui_Fetcher_DataChangedEventArgs__ctor
-  commentId: M:Mapsui.Fetcher.DataChangedEventArgs.#ctor
-  name.vb: New()
-  fullName: Mapsui.Fetcher.DataChangedEventArgs.DataChangedEventArgs()
-  fullName.vb: Mapsui.Fetcher.DataChangedEventArgs.New()
-  nameWithType: DataChangedEventArgs.DataChangedEventArgs()
-  nameWithType.vb: DataChangedEventArgs.New()
-- uid: Mapsui.Fetcher.DataChangedEventArgs.#ctor(System.Exception)
-  name: DataChangedEventArgs(Exception?)
-  href: pages/Mapsui.Fetcher.DataChangedEventArgs.html#Mapsui_Fetcher_DataChangedEventArgs__ctor_System_Exception_
-  commentId: M:Mapsui.Fetcher.DataChangedEventArgs.#ctor(System.Exception)
-  name.vb: New(Exception)
-  fullName: Mapsui.Fetcher.DataChangedEventArgs.DataChangedEventArgs(System.Exception?)
-  fullName.vb: Mapsui.Fetcher.DataChangedEventArgs.New(System.Exception)
-  nameWithType: DataChangedEventArgs.DataChangedEventArgs(Exception?)
-  nameWithType.vb: DataChangedEventArgs.New(Exception)
 - uid: Mapsui.Fetcher.DataChangedEventArgs.#ctor(System.Exception,System.String)
   name: DataChangedEventArgs(Exception?, string)
   href: pages/Mapsui.Fetcher.DataChangedEventArgs.html#Mapsui_Fetcher_DataChangedEventArgs__ctor_System_Exception_System_String_
@@ -6232,6 +6214,15 @@ references:
   fullName.vb: Mapsui.Fetcher.DataChangedEventArgs.New(System.Exception, String)
   nameWithType: DataChangedEventArgs.DataChangedEventArgs(Exception?, string)
   nameWithType.vb: DataChangedEventArgs.New(Exception, String)
+- uid: Mapsui.Fetcher.DataChangedEventArgs.#ctor(System.String)
+  name: DataChangedEventArgs(string)
+  href: pages/Mapsui.Fetcher.DataChangedEventArgs.html#Mapsui_Fetcher_DataChangedEventArgs__ctor_System_String_
+  commentId: M:Mapsui.Fetcher.DataChangedEventArgs.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Mapsui.Fetcher.DataChangedEventArgs.DataChangedEventArgs(string)
+  fullName.vb: Mapsui.Fetcher.DataChangedEventArgs.New(String)
+  nameWithType: DataChangedEventArgs.DataChangedEventArgs(string)
+  nameWithType.vb: DataChangedEventArgs.New(String)
 - uid: Mapsui.Fetcher.DataChangedEventArgs.#ctor*
   name: DataChangedEventArgs
   href: pages/Mapsui.Fetcher.DataChangedEventArgs.html#Mapsui_Fetcher_DataChangedEventArgs__ctor_
@@ -30320,72 +30311,6 @@ references:
   commentId: T:Mapsui.UI.Android.Resource
   fullName: Mapsui.UI.Android.Resource
   nameWithType: Resource
-- uid: Mapsui.UI.Android.Resource.Attribute
-  name: Resource.Attribute
-  href: pages/Mapsui.UI.Android.Resource.Attribute.html
-  commentId: T:Mapsui.UI.Android.Resource.Attribute
-  fullName: Mapsui.UI.Android.Resource.Attribute
-  nameWithType: Resource.Attribute
-- uid: Mapsui.UI.Android.Resource.Attribute.ignorePixelScaling
-  name: ignorePixelScaling
-  href: pages/Mapsui.UI.Android.Resource.Attribute.html#Mapsui_UI_Android_Resource_Attribute_ignorePixelScaling
-  commentId: F:Mapsui.UI.Android.Resource.Attribute.ignorePixelScaling
-  fullName: Mapsui.UI.Android.Resource.Attribute.ignorePixelScaling
-  nameWithType: Resource.Attribute.ignorePixelScaling
-- uid: Mapsui.UI.Android.Resource.Attribute.start_with_openstreetmap
-  name: start_with_openstreetmap
-  href: pages/Mapsui.UI.Android.Resource.Attribute.html#Mapsui_UI_Android_Resource_Attribute_start_with_openstreetmap
-  commentId: F:Mapsui.UI.Android.Resource.Attribute.start_with_openstreetmap
-  fullName: Mapsui.UI.Android.Resource.Attribute.start_with_openstreetmap
-  nameWithType: Resource.Attribute.start_with_openstreetmap
-- uid: Mapsui.UI.Android.Resource.String
-  name: Resource.String
-  href: pages/Mapsui.UI.Android.Resource.String.html
-  commentId: T:Mapsui.UI.Android.Resource.String
-  fullName: Mapsui.UI.Android.Resource.String
-  nameWithType: Resource.String
-- uid: Mapsui.UI.Android.Resource.String.ApplicationName
-  name: ApplicationName
-  href: pages/Mapsui.UI.Android.Resource.String.html#Mapsui_UI_Android_Resource_String_ApplicationName
-  commentId: F:Mapsui.UI.Android.Resource.String.ApplicationName
-  fullName: Mapsui.UI.Android.Resource.String.ApplicationName
-  nameWithType: Resource.String.ApplicationName
-- uid: Mapsui.UI.Android.Resource.String.Hello
-  name: Hello
-  href: pages/Mapsui.UI.Android.Resource.String.html#Mapsui_UI_Android_Resource_String_Hello
-  commentId: F:Mapsui.UI.Android.Resource.String.Hello
-  fullName: Mapsui.UI.Android.Resource.String.Hello
-  nameWithType: Resource.String.Hello
-- uid: Mapsui.UI.Android.Resource.Styleable
-  name: Resource.Styleable
-  href: pages/Mapsui.UI.Android.Resource.Styleable.html
-  commentId: T:Mapsui.UI.Android.Resource.Styleable
-  fullName: Mapsui.UI.Android.Resource.Styleable
-  nameWithType: Resource.Styleable
-- uid: Mapsui.UI.Android.Resource.Styleable.SKCanvasView
-  name: SKCanvasView
-  href: pages/Mapsui.UI.Android.Resource.Styleable.html#Mapsui_UI_Android_Resource_Styleable_SKCanvasView
-  commentId: F:Mapsui.UI.Android.Resource.Styleable.SKCanvasView
-  fullName: Mapsui.UI.Android.Resource.Styleable.SKCanvasView
-  nameWithType: Resource.Styleable.SKCanvasView
-- uid: Mapsui.UI.Android.Resource.Styleable.SKCanvasView_ignorePixelScaling
-  name: SKCanvasView_ignorePixelScaling
-  href: pages/Mapsui.UI.Android.Resource.Styleable.html#Mapsui_UI_Android_Resource_Styleable_SKCanvasView_ignorePixelScaling
-  commentId: F:Mapsui.UI.Android.Resource.Styleable.SKCanvasView_ignorePixelScaling
-  fullName: Mapsui.UI.Android.Resource.Styleable.SKCanvasView_ignorePixelScaling
-  nameWithType: Resource.Styleable.SKCanvasView_ignorePixelScaling
-- uid: Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style
-  name: start_with_openstreetmap_style
-  href: pages/Mapsui.UI.Android.Resource.Styleable.html#Mapsui_UI_Android_Resource_Styleable_start_with_openstreetmap_style
-  commentId: F:Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style
-  fullName: Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style
-  nameWithType: Resource.Styleable.start_with_openstreetmap_style
-- uid: Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style_start_with_openstreetmap
-  name: start_with_openstreetmap_style_start_with_openstreetmap
-  href: pages/Mapsui.UI.Android.Resource.Styleable.html#Mapsui_UI_Android_Resource_Styleable_start_with_openstreetmap_style_start_with_openstreetmap
-  commentId: F:Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style_start_with_openstreetmap
-  fullName: Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style_start_with_openstreetmap
-  nameWithType: Resource.Styleable.start_with_openstreetmap_style_start_with_openstreetmap
 - uid: Mapsui.UI.Android.SkiaRenderMode
   name: SkiaRenderMode
   href: pages/Mapsui.UI.Android.SkiaRenderMode.html
