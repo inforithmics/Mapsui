@@ -34,6 +34,7 @@
     </PackageReference>
     <PackageReference Include="coverlet.collector" />
     <PackageReference Include="Svg.Skia" />
+    <PackageReference Include="SkiaSharp" />
   </ItemGroup>
 
   <ItemGroup Condition="$([MSBuild]::IsOSPlatform('linux'))">
